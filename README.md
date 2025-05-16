@@ -7,7 +7,10 @@ This repository holds all the relevant files created throughout the milestones o
 
 ## Non-trivial Demonstrator
 
-A .zip file containing all the necessary components for the non-trivial demonstrator is available in the releases. The demonstrator allows you to:
+The non-trivial demonstrator is available as a single file `timerep-demonstrator.zip` at:
+https://github.com/giooms/INFO9014/releases/tag/v1.0
+
+The demonstrator allows you to:
 
 - Test SHACL rules against uploaded data
 - Verify that data uploads don't corrupt the existing knowledge graph
