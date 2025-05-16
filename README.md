@@ -8,7 +8,7 @@ This repository holds all the relevant files created throughout the milestones o
 ## Non-trivial Demonstrator
 
 The non-trivial demonstrator is available as a single file `timerep-demonstrator.zip` at:
-https://github.com/giooms/INFO9014/releases/tag/v1.0
+https://github.com/giooms/INFO9014/releases
 
 The demonstrator allows you to:
 
