@@ -1,0 +1,56 @@
+<h2 id="desc" class="list">TimeRep Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">
+The TimeRep ontology provides a conceptual model for time tracking and project management, particularly aimed at freelancers and small businesses who need to track their work activities, manage client relationships, and facilitate accurate billing.
+
+## Core Classes and Structure
+
+### Agent Framework
+The ontology is built around the concept of **Agents** as the primary actors in the system. Agents are divided into:
+
+- **Person**: Human actors in the system
+    - **User**: The primary user of the TimeRep system who manages projects and tracks time
+- **Organization**: Entities that commission projects and have contacts
+
+### Project Organization
+Projects form the organizational backbone of the TimeRep system:
+
+- **Project**: A defined body of work commissioned by an Organization
+- **Task**: Specific activities performed within projects, always assigned to exactly one Project
+
+### Time Tracking
+Time tracking is implemented through a temporal framework:
+
+- **TemporalEntity**: Abstract class for entities with time dimensions
+    - **Report**: Records of time spent on particular tasks, always reported by a User
+    - **Contract**: Formal agreements that cover Projects and specify work arrangements and rates
+
+### Supporting Concepts
+Additional concepts support the core functionality:
+
+- **Expense**: Records costs incurred during project execution, always linked to a Report
+- **Location**: Places where work is performed, associated with Reports
+- **ValidationStatus**: Represents the validation state of entities based on SHACL constraints
+
+## Key Relationships
+
+The ontology defines clear semantic relationships between concepts, including:
+
+- Users define tasks, establish contracts with organizations, and log reports
+- Projects belong to organizations (exactly one) and are covered by contracts
+- Tasks are assigned to exactly one project and defined by users
+- Reports are reported by users, for specific tasks, and at specific locations
+- Organizations have contacts (Person) and projects
+- Reports can include expenses and can be billable
+
+## Validation Framework
+
+A key feature of the TimeRep ontology is its built-in validation framework, which:
+
+- Links entities to their validation statuses through hasValidationStatus property
+- Records validation results, messages, and counts of errors/warnings
+- Supports validation timestamps to track when validations occurred
+- Links to the SHACL constraints defined in the companion shapes graph
+
+This semantic structure enables faithful time tracking, project management, and reporting capabilities while maintaining data integrity through validation.
+</span>

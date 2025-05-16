@@ -1,0 +1,1598 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://www.semanticweb.org/timerep/ontology" ],
+    "title" : {
+      "en" : "TimeRep Ontology"
+    },
+    "iri" : "http://www.semanticweb.org/timerep/ontology#",
+    "version" : "1.0",
+    "author" : [ "Gilles Ooms", "Martin Dengis", "Thomas Fredrich", "Marie Goffin" ],
+    "comments" : {
+      "en" : "TimeRep ontology for project management and time tracking"
+    },
+    "other" : {
+      "date" : [ {
+        "identifier" : "date",
+        "language" : "undefined",
+        "value" : "2025-04-02",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Martin Dengis",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Marie Goffin",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Thomas Fredrich",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Gilles Ooms",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "1.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "TimeRep Ontology",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://www.semanticweb.org/timerep/shapes#",
+        "type" : "iri"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:disjointUnionOf"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "60",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "72",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "82",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "78",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Contract",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Contract",
+      "en" : "Contract"
+    },
+    "comment" : {
+      "en" : "Represents a Contract in Timerep system"
+    },
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Agent",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "disjointUnion" : [ "6", "7" ],
+    "label" : {
+      "IRI-based" : "Agent",
+      "en" : "Agent"
+    },
+    "subClasses" : [ "6", "7" ],
+    "comment" : {
+      "en" : "An entity capable of performing actions within the TimeRep system, serving as the common superclass for both persons and organizational entities."
+    },
+    "attributes" : [ "disjointUnion" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Project",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Project",
+      "en" : "Project"
+    },
+    "comment" : {
+      "en" : "A defined body of work commissioned by an Organization, with clear boundaries, deliverables, and timeframes. Projects provide the context within which tasks are performed and cannot be equivalent to tasks."
+    },
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "19",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Person",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "subClasses" : [ "24" ],
+    "comment" : {
+      "en" : "Represents the generic concept of a Person"
+    },
+    "id" : "7",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Organization",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "comment" : {
+      "en" : "Represents an Organization (company) in TimeRep system. Can be linked to a User via the isClientOf predicate."
+    },
+    "id" : "6",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Expense",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Expense",
+      "en" : "Expense"
+    },
+    "comment" : {
+      "en" : "Represents an Expense in Timerep system"
+    },
+    "id" : "12"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "50",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "54",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "60",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "15",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "65",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "66",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "67",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "33",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "72",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "69",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#User",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "User",
+      "en" : "User"
+    },
+    "comment" : {
+      "en" : "Represents a User in TimeRep system"
+    },
+    "id" : "24",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "79",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "0", "4", "6", "26", "3" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "82"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "30",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "0", "4", "6", "13", "12" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "84",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "85",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "86",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Report",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Report",
+      "en" : "Report"
+    },
+    "comment" : {
+      "en" : "Represents a Report in Timerep system"
+    },
+    "id" : "13",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Location",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Location",
+      "en" : "Location"
+    },
+    "comment" : {
+      "en" : "Represents a Location in Timerep system, which can be general (e.g., 'Home Working', 'Office') or specific (e.g., a physical address). This concept may differ from location definitions in other systems."
+    },
+    "id" : "26"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#Task",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Task",
+      "en" : "Task"
+    },
+    "comment" : {
+      "en" : "A specific activity or unit of work performed within the scope of a project. Tasks represent the actual work being done by users and tracked in reports."
+    },
+    "id" : "3"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#ValidationStatus",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ValidationStatus",
+      "en" : "ValidationStatus"
+    },
+    "comment" : {
+      "en" : "Represents the validation status of entities in the TimeRep system based on SHACL constraints."
+    },
+    "id" : "16"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#TemporalEntity",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TemporalEntity",
+      "en" : "TemporalEntity"
+    },
+    "subClasses" : [ "0", "13" ],
+    "comment" : {
+      "en" : "Represents an entity with temporal dimension in the TimeRep system"
+    },
+    "id" : "1"
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "23",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "25",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "27",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "28",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "29",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "41",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "44",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "45",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "46",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "47",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "48",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "49",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "75",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "71",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "87",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "90",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "97",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "99",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "101",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "103",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "104",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "105",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "106",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "107",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "108",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "109",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "111",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "113",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "114",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "116",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isAssignedTo",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isAssignedTo",
+      "en" : "isAssignedTo"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "Relates a Task to a Project it is assigned to"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#agentID",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "agentID",
+      "en" : "agentID"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "A unique identifier for an Agent in the system"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isIncurredFor",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "isIncurredFor",
+      "en" : "isIncurredFor"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "Relates an Expense to a Report"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasValidationStatus",
+    "inverse" : "17",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasValidationStatus",
+      "en" : "hasValidationStatus"
+    },
+    "domain" : "15",
+    "comment" : {
+      "en" : "Links an entity to its validation status"
+    },
+    "attributes" : [ "object" ],
+    "id" : "14"
+  }, {
+    "range" : "16",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isReportedFor",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "isReportedFor",
+      "en" : "isReportedFor"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Relates a Report to one or multiple Tasks jointly"
+    },
+    "attributes" : [ "someValues", "object", "functional" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isReportedAt",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "isReportedAt",
+      "en" : "isReportedAt"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Relates a Report to the Location where work was performed"
+    },
+    "attributes" : [ "someValues", "object", "functional" ],
+    "id" : "25"
+  }, {
+    "range" : "16",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "range" : "1",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#lastName",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "lastName",
+      "en" : "lastName"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "The lastName of a Person"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#validates",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "validates",
+      "en" : "validates"
+    },
+    "domain" : "15",
+    "comment" : {
+      "en" : "Links a shape or validator to the validation status it produced"
+    },
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#type",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "type",
+      "en" : "type"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "The type (travel, materials, etc) of an Expense"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasExpense",
+    "inverse" : "11",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "hasExpense",
+      "en" : "hasExpense"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Relates a Report to an Expense"
+    },
+    "attributes" : [ "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isValidatedBy",
+    "inverse" : "31",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "isValidatedBy",
+      "en" : "isValidatedBy"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "Links a validation status to the shape that produced it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isCoveredBy",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "isCoveredBy",
+      "en" : "isCoveredBy"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Relates a Project to a Contract"
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#errorCount",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "errorCount",
+      "en" : "errorCount"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "The number of errors found during validation"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "37"
+  }, {
+    "range" : "16",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#validatedEntity",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "validatedEntity",
+      "en" : "validatedEntity"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "Links a validation status to the entity that was validated"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "17"
+  }, {
+    "range" : "3",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "40"
+  }, {
+    "range" : "1",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "41"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#covers",
+    "inverse" : "36",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "covers",
+      "en" : "covers"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "Relates a Contract to a Project"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "42"
+  }, {
+    "range" : "3",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "43"
+  }, {
+    "range" : "16",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "44"
+  }, {
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "1",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "range" : "4",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "range" : "4",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "48"
+  }, {
+    "range" : "1",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "49"
+  }, {
+    "range" : "5",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#validationMessage",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "validationMessage",
+      "en" : "validationMessage"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "Detailed message describing the validation result"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#logsReport",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "logsReport",
+      "en" : "logsReport"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Relates a User to the Report he/she logs"
+    },
+    "attributes" : [ "object" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isAddedBy",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "isAddedBy",
+      "en" : "isAddedBy"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "Relates a Contract to a User"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#billable",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "billable",
+      "en" : "billable"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Whether a Report is billable to the Organization or not"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "57"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#firstName",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "firstName",
+      "en" : "firstName"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "The firstName of a Person"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasContact",
+    "inverse" : "62",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasContact",
+      "en" : "hasContact"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Relates a Organization to its contact Person"
+    },
+    "attributes" : [ "object" ],
+    "id" : "61"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isReportedFor",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "isReportedFor",
+      "en" : "isReportedFor"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Relates a Report to one or multiple Tasks jointly"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#phoneNumber",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "69",
+    "label" : {
+      "IRI-based" : "phoneNumber",
+      "en" : "phoneNumber"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "The phoneNumber of a Person."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasClient",
+    "inverse" : "71",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasClient",
+      "en" : "hasClient"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Relates a User to a client Organization"
+    },
+    "attributes" : [ "object" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#adds",
+    "inverse" : "56",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "adds",
+      "en" : "adds"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Relates a User to a Contract"
+    },
+    "attributes" : [ "object" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#defines",
+    "inverse" : "75",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "defines",
+      "en" : "defines"
+    },
+    "domain" : "24",
+    "comment" : {
+      "en" : "Relates a User to a Task"
+    },
+    "attributes" : [ "object" ],
+    "id" : "74"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#description",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "description",
+      "en" : "description"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "The description of a Task"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#note",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "note",
+      "en" : "note"
+    },
+    "domain" : "78",
+    "comment" : {
+      "en" : "A note set by the User of the TimeRep app relative to the Entity"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#validationDate",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "validationDate",
+      "en" : "validationDate"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "The date when the validation was performed"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isDefinedBy",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "isDefinedBy",
+      "en" : "isDefinedBy"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "Relates a Task to a User"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "75"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isClientOf",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "isClientOf",
+      "en" : "isClientOf"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Relates an Organization to a User. To be considered client of a User, the Organization must have a Project coveredBy a Contract with that User."
+    },
+    "attributes" : [ "object" ],
+    "id" : "71"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "54",
+    "label" : {
+      "IRI-based" : "topDataProperty"
+    },
+    "domain" : "50",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "81"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#rate",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "rate",
+      "en" : "rate"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "The rate per hour charged to an Organization with regards to a Contract"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "83"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#warningCount",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "warningCount",
+      "en" : "warningCount"
+    },
+    "domain" : "16",
+    "comment" : {
+      "en" : "The number of warnings found during validation"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isReportedAt",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "isReportedAt",
+      "en" : "isReportedAt"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Relates a Report to the Location where work was performed"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "88"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#amount",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "amount",
+      "en" : "amount"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "The amount of an Expense"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "89"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#validationResult",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "60",
+    "label" : {
+      "IRI-based" : "validationResult",
+      "en" : "validationResult"
+    },
+    "cardinality" : "1",
+    "domain" : "16",
+    "comment" : {
+      "en" : "The overall result of validation (e.g., PASSED, FAILED, WARNING)"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "90"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#endTimestamp",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "endTimestamp",
+      "en" : "endTimestamp"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "The precise end time of a temporal entity"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "91"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#startTimestamp",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "startTimestamp",
+      "en" : "startTimestamp"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "The precise start time of a temporal entity"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "92"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#breakTimeInterval",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "breakTimeInterval",
+      "en" : "breakTimeInterval"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Stores the raw break interval value within a report."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isReportedBy",
+    "inverse" : "55",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "isReportedBy",
+      "en" : "isReportedBy"
+    },
+    "domain" : "13",
+    "comment" : {
+      "en" : "Relates a Report to a User"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasProject",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasProject",
+      "en" : "hasProject"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Relates an Organization to a Project"
+    },
+    "attributes" : [ "object" ],
+    "id" : "95"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#email",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "email",
+      "en" : "email"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "The email of a Person"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "96"
+  }, {
+    "range" : "7",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "97"
+  }, {
+    "range" : "5",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "98"
+  }, {
+    "range" : "1",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "99"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isLocationOf",
+    "inverse" : "88",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "isLocationOf",
+      "en" : "isLocationOf"
+    },
+    "domain" : "26",
+    "comment" : {
+      "en" : "Relates a Location to the Reports that were created at this location"
+    },
+    "attributes" : [ "object" ],
+    "id" : "101"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#belongsTo",
+    "inverse" : "95",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "belongsTo",
+      "en" : "belongsTo"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Relates a Project to a Organization"
+    },
+    "attributes" : [ "object", "functional" ],
+    "id" : "102"
+  }, {
+    "range" : "1",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "103"
+  }, {
+    "range" : "12",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "104"
+  }, {
+    "range" : "4",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "105"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#rateUnit",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "66",
+    "label" : {
+      "IRI-based" : "rateUnit",
+      "en" : "rateUnit"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "The rateUnit associated to the rate charged to an Organization for a particular Contract"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "106"
+  }, {
+    "range" : "3",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "107"
+  }, {
+    "range" : "13",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "108"
+  }, {
+    "range" : "3",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "109"
+  }, {
+    "range" : "16",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "110"
+  }, {
+    "range" : "26",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "111"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#isContactOf",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "isContactOf",
+      "en" : "isContactOf"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Relates a Contact Person to the Organization it represents"
+    },
+    "attributes" : [ "object" ],
+    "id" : "62"
+  }, {
+    "range" : "16",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "112"
+  }, {
+    "range" : "26",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "113"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#name",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "name",
+      "en" : "name"
+    },
+    "domain" : "82",
+    "comment" : {
+      "en" : "The name of the object Entity"
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "114"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasReport",
+    "inverse" : "64",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasReport",
+      "en" : "hasReport"
+    },
+    "domain" : "3",
+    "comment" : {
+      "en" : "Relates a Task to a Report"
+    },
+    "attributes" : [ "object" ],
+    "id" : "115"
+  }, {
+    "iri" : "http://www.semanticweb.org/timerep/ontology#hasAssignedTask",
+    "inverse" : "2",
+    "baseIri" : "http://www.semanticweb.org/timerep/ontology",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasAssignedTask",
+      "en" : "hasAssignedTask"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Relates a Project to the Tasks assigned to it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "116"
+  } ]
+}

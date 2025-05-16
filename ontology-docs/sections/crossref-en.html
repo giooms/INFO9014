@@ -1,0 +1,1723 @@
+<h2 id="crossreference" class="list">Cross-reference for TimeRep Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by TimeRep Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a></li>
+  <li><a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a></li>
+  <li><a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a></li>
+  <li><a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a></li>
+  <li><a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a></li>
+  <li><a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a></li>
+  <li><a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a></li>
+  <li><a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a></li>
+  <li><a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a></li>
+  <li><a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a></li>
+  <li><a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a></li>
+  <li><a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a></li>
+ </ul>
+ <div class="entity" id="Agent">
+  <h3>Agent<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Agent</p>
+  <div class="comment">
+   <span class="markdown">An entity capable of performing actions within the TimeRep system, serving as the common superclass for both persons and organizational entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#agentID" title="http://www.semanticweb.org/timerep/ontology#agentID">agentID</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>, <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Contract">
+  <h3>Contract<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Contract</p>
+  <div class="comment">
+   <span class="markdown">Represents a Contract in Timerep system</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#covers" title="http://www.semanticweb.org/timerep/ontology#covers">covers</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAddedBy" title="http://www.semanticweb.org/timerep/ontology#isAddedBy">isAddedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="http://www.semanticweb.org/timerep/ontology#name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#note" title="http://www.semanticweb.org/timerep/ontology#note">note</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rate" title="http://www.semanticweb.org/timerep/ontology#rate">rate</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#rateUnit" title="http://www.semanticweb.org/timerep/ontology#rateUnit">rateUnit</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#adds" title="http://www.semanticweb.org/timerep/ontology#adds">adds</a> <sup class="type-op" title="object property">op</sup>, <a href="#isCoveredBy" title="http://www.semanticweb.org/timerep/ontology#isCoveredBy">isCoveredBy</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Expense">
+  <h3>Expense<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Expense</p>
+  <div class="comment">
+   <span class="markdown">Represents an Expense in Timerep system</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#amount" title="http://www.semanticweb.org/timerep/ontology#amount">amount</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isIncurredFor" title="http://www.semanticweb.org/timerep/ontology#isIncurredFor">isIncurredFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#note" title="http://www.semanticweb.org/timerep/ontology#note">note</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#type" title="http://www.semanticweb.org/timerep/ontology#type">type</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasExpense" title="http://www.semanticweb.org/timerep/ontology#hasExpense">hasExpense</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>, <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Location">
+  <h3>Location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Location</p>
+  <div class="comment">
+   <span class="markdown">Represents a Location in Timerep system, which can be general (e.g., 'Home Working', 'Office') or specific (e.g., a physical address). This concept may differ from location definitions in other systems.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#isLocationOf" title="http://www.semanticweb.org/timerep/ontology#isLocationOf">isLocationOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="http://www.semanticweb.org/timerep/ontology#name">name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isReportedAt" title="http://www.semanticweb.org/timerep/ontology#isReportedAt">isReportedAt</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>, <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Organization">
+  <h3>Organization<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Organization</p>
+  <div class="comment">
+   <span class="markdown">Represents an Organization (company) in TimeRep system. Can be linked to a User via the isClientOf predicate.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasContact" title="http://www.semanticweb.org/timerep/ontology#hasContact">hasContact</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProject" title="http://www.semanticweb.org/timerep/ontology#hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>, <a href="#isClientOf" title="http://www.semanticweb.org/timerep/ontology#isClientOf">isClientOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="http://www.semanticweb.org/timerep/ontology#name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#note" title="http://www.semanticweb.org/timerep/ontology#note">note</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#belongsTo" title="http://www.semanticweb.org/timerep/ontology#belongsTo">belongsTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasClient" title="http://www.semanticweb.org/timerep/ontology#hasClient">hasClient</a> <sup class="type-op" title="object property">op</sup>, <a href="#isContactOf" title="http://www.semanticweb.org/timerep/ontology#isContactOf">isContactOf</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Person">
+  <h3>Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Person</p>
+  <div class="comment">
+   <span class="markdown">Represents the generic concept of a Person</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#email" title="http://www.semanticweb.org/timerep/ontology#email">email</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#firstName" title="http://www.semanticweb.org/timerep/ontology#firstName">firstName</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isContactOf" title="http://www.semanticweb.org/timerep/ontology#isContactOf">isContactOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#lastName" title="http://www.semanticweb.org/timerep/ontology#lastName">lastName</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#phoneNumber" title="http://www.semanticweb.org/timerep/ontology#phoneNumber">phoneNumber</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasContact" title="http://www.semanticweb.org/timerep/ontology#hasContact">hasContact</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Project">
+  <h3>Project<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Project</p>
+  <div class="comment">
+   <span class="markdown">A defined body of work commissioned by an Organization, with clear boundaries, deliverables, and timeframes. Projects provide the context within which tasks are performed and cannot be equivalent to tasks.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#belongsTo" title="http://www.semanticweb.org/timerep/ontology#belongsTo">belongsTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAssignedTask" title="http://www.semanticweb.org/timerep/ontology#hasAssignedTask">hasAssignedTask</a> <sup class="type-op" title="object property">op</sup>, <a href="#isCoveredBy" title="http://www.semanticweb.org/timerep/ontology#isCoveredBy">isCoveredBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="http://www.semanticweb.org/timerep/ontology#name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#note" title="http://www.semanticweb.org/timerep/ontology#note">note</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#covers" title="http://www.semanticweb.org/timerep/ontology#covers">covers</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasProject" title="http://www.semanticweb.org/timerep/ontology#hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAssignedTo" title="http://www.semanticweb.org/timerep/ontology#isAssignedTo">isAssignedTo</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Report">
+  <h3>Report<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Report</p>
+  <div class="comment">
+   <span class="markdown">Represents a Report in Timerep system</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#billable" title="http://www.semanticweb.org/timerep/ontology#billable">billable</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#breakTimeInterval" title="http://www.semanticweb.org/timerep/ontology#breakTimeInterval">breakTimeInterval</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasExpense" title="http://www.semanticweb.org/timerep/ontology#hasExpense">hasExpense</a> <sup class="type-op" title="object property">op</sup>, <a href="#isReportedAt" title="http://www.semanticweb.org/timerep/ontology#isReportedAt">isReportedAt</a> <sup class="type-op" title="object property">op</sup>, <a href="#isReportedBy" title="http://www.semanticweb.org/timerep/ontology#isReportedBy">isReportedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#isReportedFor" title="http://www.semanticweb.org/timerep/ontology#isReportedFor">isReportedFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#note" title="http://www.semanticweb.org/timerep/ontology#note">note</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasReport" title="http://www.semanticweb.org/timerep/ontology#hasReport">hasReport</a> <sup class="type-op" title="object property">op</sup>, <a href="#isIncurredFor" title="http://www.semanticweb.org/timerep/ontology#isIncurredFor">isIncurredFor</a> <sup class="type-op" title="object property">op</sup>, <a href="#isLocationOf" title="http://www.semanticweb.org/timerep/ontology#isLocationOf">isLocationOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#logsReport" title="http://www.semanticweb.org/timerep/ontology#logsReport">logsReport</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Task">
+  <h3>Task<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#Task</p>
+  <div class="comment">
+   <span class="markdown">A specific activity or unit of work performed within the scope of a project. Tasks represent the actual work being done by users and tracked in reports.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#description" title="http://www.semanticweb.org/timerep/ontology#description">description</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasReport" title="http://www.semanticweb.org/timerep/ontology#hasReport">hasReport</a> <sup class="type-op" title="object property">op</sup>, <a href="#isAssignedTo" title="http://www.semanticweb.org/timerep/ontology#isAssignedTo">isAssignedTo</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedBy" title="http://www.semanticweb.org/timerep/ontology#isDefinedBy">isDefinedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#name" title="http://www.semanticweb.org/timerep/ontology#name">name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#defines" title="http://www.semanticweb.org/timerep/ontology#defines">defines</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAssignedTask" title="http://www.semanticweb.org/timerep/ontology#hasAssignedTask">hasAssignedTask</a> <sup class="type-op" title="object property">op</sup>, <a href="#isReportedFor" title="http://www.semanticweb.org/timerep/ontology#isReportedFor">isReportedFor</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TemporalEntity">
+  <h3>TemporalEntity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#TemporalEntity</p>
+  <div class="comment">
+   <span class="markdown">Represents an entity with temporal dimension in the TimeRep system</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>, <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#endTimestamp" title="http://www.semanticweb.org/timerep/ontology#endTimestamp">endTimestamp</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#startTimestamp" title="http://www.semanticweb.org/timerep/ontology#startTimestamp">startTimestamp</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>, <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>, <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="User">
+  <h3>User<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#User</p>
+  <div class="comment">
+   <span class="markdown">Represents a User in TimeRep system</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#adds" title="http://www.semanticweb.org/timerep/ontology#adds">adds</a> <sup class="type-op" title="object property">op</sup>, <a href="#defines" title="http://www.semanticweb.org/timerep/ontology#defines">defines</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasClient" title="http://www.semanticweb.org/timerep/ontology#hasClient">hasClient</a> <sup class="type-op" title="object property">op</sup>, <a href="#logsReport" title="http://www.semanticweb.org/timerep/ontology#logsReport">logsReport</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isAddedBy" title="http://www.semanticweb.org/timerep/ontology#isAddedBy">isAddedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#isClientOf" title="http://www.semanticweb.org/timerep/ontology#isClientOf">isClientOf</a> <sup class="type-op" title="object property">op</sup>, <a href="#isDefinedBy" title="http://www.semanticweb.org/timerep/ontology#isDefinedBy">isDefinedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#isReportedBy" title="http://www.semanticweb.org/timerep/ontology#isReportedBy">isReportedBy</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ValidationStatus">
+  <h3>ValidationStatus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#ValidationStatus</p>
+  <div class="comment">
+   <span class="markdown">Represents the validation status of entities in the TimeRep system based on SHACL constraints.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#errorCount" title="http://www.semanticweb.org/timerep/ontology#errorCount">errorCount</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#isValidatedBy" title="http://www.semanticweb.org/timerep/ontology#isValidatedBy">isValidatedBy</a> <sup class="type-op" title="object property">op</sup>, <a href="#validatedEntity" title="http://www.semanticweb.org/timerep/ontology#validatedEntity">validatedEntity</a> <sup class="type-op" title="object property">op</sup>, <a href="#validationDate" title="http://www.semanticweb.org/timerep/ontology#validationDate">validationDate</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#validationMessage" title="http://www.semanticweb.org/timerep/ontology#validationMessage">validationMessage</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#validationResult" title="http://www.semanticweb.org/timerep/ontology#validationResult">validationResult</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#warningCount" title="http://www.semanticweb.org/timerep/ontology#warningCount">warningCount</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasValidationStatus" title="http://www.semanticweb.org/timerep/ontology#hasValidationStatus">hasValidationStatus</a> <sup class="type-op" title="object property">op</sup>, <a href="#validates" title="http://www.semanticweb.org/timerep/ontology#validates">validates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>, <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>, <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>, <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#adds" title="http://www.semanticweb.org/timerep/ontology#adds">adds</a></li>
+  <li><a href="#belongsTo" title="http://www.semanticweb.org/timerep/ontology#belongsTo">belongsTo</a></li>
+  <li><a href="#covers" title="http://www.semanticweb.org/timerep/ontology#covers">covers</a></li>
+  <li><a href="#defines" title="http://www.semanticweb.org/timerep/ontology#defines">defines</a></li>
+  <li><a href="#hasAssignedTask" title="http://www.semanticweb.org/timerep/ontology#hasAssignedTask">hasAssignedTask</a></li>
+  <li><a href="#hasClient" title="http://www.semanticweb.org/timerep/ontology#hasClient">hasClient</a></li>
+  <li><a href="#hasContact" title="http://www.semanticweb.org/timerep/ontology#hasContact">hasContact</a></li>
+  <li><a href="#hasExpense" title="http://www.semanticweb.org/timerep/ontology#hasExpense">hasExpense</a></li>
+  <li><a href="#hasProject" title="http://www.semanticweb.org/timerep/ontology#hasProject">hasProject</a></li>
+  <li><a href="#hasReport" title="http://www.semanticweb.org/timerep/ontology#hasReport">hasReport</a></li>
+  <li><a href="#hasValidationStatus" title="http://www.semanticweb.org/timerep/ontology#hasValidationStatus">hasValidationStatus</a></li>
+  <li><a href="#isAddedBy" title="http://www.semanticweb.org/timerep/ontology#isAddedBy">isAddedBy</a></li>
+  <li><a href="#isAssignedTo" title="http://www.semanticweb.org/timerep/ontology#isAssignedTo">isAssignedTo</a></li>
+  <li><a href="#isClientOf" title="http://www.semanticweb.org/timerep/ontology#isClientOf">isClientOf</a></li>
+  <li><a href="#isContactOf" title="http://www.semanticweb.org/timerep/ontology#isContactOf">isContactOf</a></li>
+  <li><a href="#isCoveredBy" title="http://www.semanticweb.org/timerep/ontology#isCoveredBy">isCoveredBy</a></li>
+  <li><a href="#isDefinedBy" title="http://www.semanticweb.org/timerep/ontology#isDefinedBy">isDefinedBy</a></li>
+  <li><a href="#isIncurredFor" title="http://www.semanticweb.org/timerep/ontology#isIncurredFor">isIncurredFor</a></li>
+  <li><a href="#isLocationOf" title="http://www.semanticweb.org/timerep/ontology#isLocationOf">isLocationOf</a></li>
+  <li><a href="#isReportedAt" title="http://www.semanticweb.org/timerep/ontology#isReportedAt">isReportedAt</a></li>
+  <li><a href="#isReportedBy" title="http://www.semanticweb.org/timerep/ontology#isReportedBy">isReportedBy</a></li>
+  <li><a href="#isReportedFor" title="http://www.semanticweb.org/timerep/ontology#isReportedFor">isReportedFor</a></li>
+  <li><a href="#isValidatedBy" title="http://www.semanticweb.org/timerep/ontology#isValidatedBy">isValidatedBy</a></li>
+  <li><a href="#logsReport" title="http://www.semanticweb.org/timerep/ontology#logsReport">logsReport</a></li>
+  <li><a href="#validatedEntity" title="http://www.semanticweb.org/timerep/ontology#validatedEntity">validatedEntity</a></li>
+  <li><a href="#validates" title="http://www.semanticweb.org/timerep/ontology#validates">validates</a></li>
+ </ul>
+ <div class="entity" id="adds">
+  <h3>adds<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#adds</p>
+  <div class="comment">
+   <span class="markdown">Relates a User to a Contract</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isAddedBy" title="http://www.semanticweb.org/timerep/ontology#isAddedBy">isAddedBy</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="belongsTo">
+  <h3>belongsTo<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#belongsTo</p>
+  <div class="comment">
+   <span class="markdown">Relates a Project to a Organization</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasProject" title="http://www.semanticweb.org/timerep/ontology#hasProject">hasProject</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="covers">
+  <h3>covers<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#covers</p>
+  <div class="comment">
+   <span class="markdown">Relates a Contract to a Project</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isCoveredBy" title="http://www.semanticweb.org/timerep/ontology#isCoveredBy">isCoveredBy</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="defines">
+  <h3>defines<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#defines</p>
+  <div class="comment">
+   <span class="markdown">Relates a User to a Task</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isDefinedBy" title="http://www.semanticweb.org/timerep/ontology#isDefinedBy">isDefinedBy</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAssignedTask">
+  <h3>hasAssignedTask<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasAssignedTask</p>
+  <div class="comment">
+   <span class="markdown">Relates a Project to the Tasks assigned to it</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isAssignedTo" title="http://www.semanticweb.org/timerep/ontology#isAssignedTo">isAssignedTo</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasClient">
+  <h3>hasClient<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasClient</p>
+  <div class="comment">
+   <span class="markdown">Relates a User to a client Organization</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isClientOf" title="http://www.semanticweb.org/timerep/ontology#isClientOf">isClientOf</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasContact">
+  <h3>hasContact<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasContact</p>
+  <div class="comment">
+   <span class="markdown">Relates a Organization to its contact Person</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isContactOf" title="http://www.semanticweb.org/timerep/ontology#isContactOf">isContactOf</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasExpense">
+  <h3>hasExpense<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasExpense</p>
+  <div class="comment">
+   <span class="markdown">Relates a Report to an Expense</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isIncurredFor" title="http://www.semanticweb.org/timerep/ontology#isIncurredFor">isIncurredFor</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasProject">
+  <h3>hasProject<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasProject</p>
+  <div class="comment">
+   <span class="markdown">Relates an Organization to a Project</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#belongsTo" title="http://www.semanticweb.org/timerep/ontology#belongsTo">belongsTo</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasReport">
+  <h3>hasReport<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasReport</p>
+  <div class="comment">
+   <span class="markdown">Relates a Task to a Report</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isReportedFor" title="http://www.semanticweb.org/timerep/ontology#isReportedFor">isReportedFor</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasValidationStatus">
+  <h3>hasValidationStatus<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#hasValidationStatus</p>
+  <div class="comment">
+   <span class="markdown">Links an entity to its validation status</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#validatedEntity" title="http://www.semanticweb.org/timerep/ontology#validatedEntity">validatedEntity</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAddedBy">
+  <h3>isAddedBy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isAddedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a Contract to a User</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#adds" title="http://www.semanticweb.org/timerep/ontology#adds">adds</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isAssignedTo">
+  <h3>isAssignedTo<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isAssignedTo</p>
+  <div class="comment">
+   <span class="markdown">Relates a Task to a Project it is assigned to</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasAssignedTask" title="http://www.semanticweb.org/timerep/ontology#hasAssignedTask">hasAssignedTask</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isClientOf">
+  <h3>isClientOf<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isClientOf</p>
+  <div class="comment">
+   <span class="markdown">Relates an Organization to a User. To be considered client of a User, the Organization must have a Project coveredBy a Contract with that User.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasClient" title="http://www.semanticweb.org/timerep/ontology#hasClient">hasClient</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isContactOf">
+  <h3>isContactOf<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isContactOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a Contact Person to the Organization it represents</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasContact" title="http://www.semanticweb.org/timerep/ontology#hasContact">hasContact</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isCoveredBy">
+  <h3>isCoveredBy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isCoveredBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a Project to a Contract</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#covers" title="http://www.semanticweb.org/timerep/ontology#covers">covers</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isDefinedBy">
+  <h3>isDefinedBy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isDefinedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a Task to a User</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#defines" title="http://www.semanticweb.org/timerep/ontology#defines">defines</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isIncurredFor">
+  <h3>isIncurredFor<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isIncurredFor</p>
+  <div class="comment">
+   <span class="markdown">Relates an Expense to a Report</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasExpense" title="http://www.semanticweb.org/timerep/ontology#hasExpense">hasExpense</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isLocationOf">
+  <h3>isLocationOf<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isLocationOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a Location to the Reports that were created at this location</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isReportedAt" title="http://www.semanticweb.org/timerep/ontology#isReportedAt">isReportedAt</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isReportedAt">
+  <h3>isReportedAt<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isReportedAt</p>
+  <div class="comment">
+   <span class="markdown">Relates a Report to the Location where work was performed</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isLocationOf" title="http://www.semanticweb.org/timerep/ontology#isLocationOf">isLocationOf</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isReportedBy">
+  <h3>isReportedBy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isReportedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a Report to a User</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#logsReport" title="http://www.semanticweb.org/timerep/ontology#logsReport">logsReport</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isReportedFor">
+  <h3>isReportedFor<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isReportedFor</p>
+  <div class="comment">
+   <span class="markdown">Relates a Report to one or multiple Tasks jointly</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasReport" title="http://www.semanticweb.org/timerep/ontology#hasReport">hasReport</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isValidatedBy">
+  <h3>isValidatedBy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#isValidatedBy</p>
+  <div class="comment">
+   <span class="markdown">Links a validation status to the shape that produced it</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#validates" title="http://www.semanticweb.org/timerep/ontology#validates">validates</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="logsReport">
+  <h3>logsReport<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#logsReport</p>
+  <div class="comment">
+   <span class="markdown">Relates a User to the Report he/she logs</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#User" title="http://www.semanticweb.org/timerep/ontology#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isReportedBy" title="http://www.semanticweb.org/timerep/ontology#isReportedBy">isReportedBy</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="validatedEntity">
+  <h3>validatedEntity<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#validatedEntity</p>
+  <div class="comment">
+   <span class="markdown">Links a validation status to the entity that was validated</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasValidationStatus" title="http://www.semanticweb.org/timerep/ontology#hasValidationStatus">hasValidationStatus</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="validates">
+  <h3>validates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#validates</p>
+  <div class="comment">
+   <span class="markdown">Links a shape or validator to the validation status it produced</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isValidatedBy" title="http://www.semanticweb.org/timerep/ontology#isValidatedBy">isValidatedBy</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#agentID" title="http://www.semanticweb.org/timerep/ontology#agentID">agentID</a></li>
+  <li><a href="#amount" title="http://www.semanticweb.org/timerep/ontology#amount">amount</a></li>
+  <li><a href="#billable" title="http://www.semanticweb.org/timerep/ontology#billable">billable</a></li>
+  <li><a href="#breakTimeInterval" title="http://www.semanticweb.org/timerep/ontology#breakTimeInterval">breakTimeInterval</a></li>
+  <li><a href="#description" title="http://www.semanticweb.org/timerep/ontology#description">description</a></li>
+  <li><a href="#email" title="http://www.semanticweb.org/timerep/ontology#email">email</a></li>
+  <li><a href="#endTimestamp" title="http://www.semanticweb.org/timerep/ontology#endTimestamp">endTimestamp</a></li>
+  <li><a href="#errorCount" title="http://www.semanticweb.org/timerep/ontology#errorCount">errorCount</a></li>
+  <li><a href="#firstName" title="http://www.semanticweb.org/timerep/ontology#firstName">firstName</a></li>
+  <li><a href="#lastName" title="http://www.semanticweb.org/timerep/ontology#lastName">lastName</a></li>
+  <li><a href="#name" title="http://www.semanticweb.org/timerep/ontology#name">name</a></li>
+  <li><a href="#note" title="http://www.semanticweb.org/timerep/ontology#note">note</a></li>
+  <li><a href="#phoneNumber" title="http://www.semanticweb.org/timerep/ontology#phoneNumber">phoneNumber</a></li>
+  <li><a href="#rate" title="http://www.semanticweb.org/timerep/ontology#rate">rate</a></li>
+  <li><a href="#rateUnit" title="http://www.semanticweb.org/timerep/ontology#rateUnit">rateUnit</a></li>
+  <li><a href="#startTimestamp" title="http://www.semanticweb.org/timerep/ontology#startTimestamp">startTimestamp</a></li>
+  <li><a href="#type" title="http://www.semanticweb.org/timerep/ontology#type">type</a></li>
+  <li><a href="#validationDate" title="http://www.semanticweb.org/timerep/ontology#validationDate">validationDate</a></li>
+  <li><a href="#validationMessage" title="http://www.semanticweb.org/timerep/ontology#validationMessage">validationMessage</a></li>
+  <li><a href="#validationResult" title="http://www.semanticweb.org/timerep/ontology#validationResult">validationResult</a></li>
+  <li><a href="#warningCount" title="http://www.semanticweb.org/timerep/ontology#warningCount">warningCount</a></li>
+ </ul>
+ <div class="entity" id="agentID">
+  <h3>agentID<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#agentID</p>
+  <div class="comment">
+   <span class="markdown">A unique identifier for an Agent in the system</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Agent" title="http://www.semanticweb.org/timerep/ontology#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="amount">
+  <h3>amount<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#amount</p>
+  <div class="comment">
+   <span class="markdown">The amount of an Expense</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="billable">
+  <h3>billable<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#billable</p>
+  <div class="comment">
+   <span class="markdown">Whether a Report is billable to the Organization or not</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="breakTimeInterval">
+  <h3>breakTimeInterval<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#breakTimeInterval</p>
+  <div class="comment">
+   <span class="markdown">Stores the raw break interval value within a report.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="description">
+  <h3>description<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#description</p>
+  <div class="comment">
+   <span class="markdown">The description of a Task</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="email">
+  <h3>email<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#email</p>
+  <div class="comment">
+   <span class="markdown">The email of a Person</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="endTimestamp">
+  <h3>endTimestamp<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#endTimestamp</p>
+  <div class="comment">
+   <span class="markdown">The precise end time of a temporal entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="errorCount">
+  <h3>errorCount<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#errorCount</p>
+  <div class="comment">
+   <span class="markdown">The number of errors found during validation</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#int" target="_blank" title="http://www.w3.org/2001/XMLSchema#int">int</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="firstName">
+  <h3>firstName<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#firstName</p>
+  <div class="comment">
+   <span class="markdown">The firstName of a Person</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="lastName">
+  <h3>lastName<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#lastName</p>
+  <div class="comment">
+   <span class="markdown">The lastName of a Person</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="name">
+  <h3>name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#name</p>
+  <div class="comment">
+   <span class="markdown">The name of the object Entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Location" title="http://www.semanticweb.org/timerep/ontology#Location">Location</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Task" title="http://www.semanticweb.org/timerep/ontology#Task">Task</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="note">
+  <h3>note<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#note</p>
+  <div class="comment">
+   <span class="markdown">A note set by the User of the TimeRep app relative to the Entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Organization" title="http://www.semanticweb.org/timerep/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Project" title="http://www.semanticweb.org/timerep/ontology#Project">Project</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Report" title="http://www.semanticweb.org/timerep/ontology#Report">Report</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="phoneNumber">
+  <h3>phoneNumber<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#phoneNumber</p>
+  <div class="comment">
+   <span class="markdown">The phoneNumber of a Person.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.semanticweb.org/timerep/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="rate">
+  <h3>rate<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#rate</p>
+  <div class="comment">
+   <span class="markdown">The rate per hour charged to an Organization with regards to a Contract</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="rateUnit">
+  <h3>rateUnit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#rateUnit</p>
+  <div class="comment">
+   <span class="markdown">The rateUnit associated to the rate charged to an Organization for a particular Contract</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Contract" title="http://www.semanticweb.org/timerep/ontology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="startTimestamp">
+  <h3>startTimestamp<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#startTimestamp</p>
+  <div class="comment">
+   <span class="markdown">The precise start time of a temporal entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#TemporalEntity" title="http://www.semanticweb.org/timerep/ontology#TemporalEntity">TemporalEntity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="type">
+  <h3>type<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#type</p>
+  <div class="comment">
+   <span class="markdown">The type (travel, materials, etc) of an Expense</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Expense" title="http://www.semanticweb.org/timerep/ontology#Expense">Expense</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="validationDate">
+  <h3>validationDate<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#validationDate</p>
+  <div class="comment">
+   <span class="markdown">The date when the validation was performed</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#date" target="_blank" title="http://www.w3.org/2001/XMLSchema#date">date</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="validationMessage">
+  <h3>validationMessage<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#validationMessage</p>
+  <div class="comment">
+   <span class="markdown">Detailed message describing the validation result</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="validationResult">
+  <h3>validationResult<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#validationResult</p>
+  <div class="comment">
+   <span class="markdown">The overall result of validation (e.g., PASSED, FAILED, WARNING)</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="warningCount">
+  <h3>warningCount<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/timerep/ontology#warningCount</p>
+  <div class="comment">
+   <span class="markdown">The number of warnings found during validation</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ValidationStatus" title="http://www.semanticweb.org/timerep/ontology#ValidationStatus">ValidationStatus</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#int" target="_blank" title="http://www.w3.org/2001/XMLSchema#int">int</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>

@@ -1,0 +1,708 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# Ontology namespace - using hash URIs for vocabulary terms
+@prefix : <http://www.semanticweb.org/timerep/ontology#> .
+
+# Data namespace - using slash URIs for resources
+@prefix resource: <http://www.semanticweb.org/timerep/resource/> .
+
+########################################################################
+# User Mapping
+########################################################################
+<#UserMapping>
+    rr:logicalTable [ rr:tableName "\"user\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:User/{id}";
+        rr:class :User;
+        rr:class :Person;
+        rr:class :Agent;
+        rr:class foaf:Person;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :firstName;
+        rr:objectMap [ rr:column "firstName"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :lastName;
+        rr:objectMap [ rr:column "lastName"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :email;
+        rr:objectMap [ rr:column "email"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dcterms:created;
+        rr:objectMap [ rr:constant "2025-04-20"^^xsd:date ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :agentID;
+        rr:objectMap [ rr:column "id"; rr:datatype xsd:string ];
+    ].
+
+<#UserHasClientMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT DISTINCT
+                u.id AS user_id,
+                c.id AS org_id
+            FROM "user" u
+            JOIN contract ct ON ct."idUser" = u.id
+            JOIN project p ON ct."idProject" = p.id
+            JOIN client c ON p."idClient" = c.id
+        """
+    ];
+    rr:subjectMap [
+        rr:template "resource:User/{user_id}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :hasClient;
+        rr:objectMap [
+            rr:template "resource:Organization/{org_id}";
+        ];
+    ].
+
+
+########################################################################
+# Organization Mapping
+########################################################################
+<#OrganizationMapping>
+    rr:logicalTable [ rr:tableName "\"client\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Organization/{id}";
+        rr:class :Organization;
+        rr:class :Agent;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :name;
+        rr:objectMap [ rr:column "name"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :note;
+        rr:objectMap [ rr:column "note"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :agentID;
+        rr:objectMap [ rr:column "id"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap[
+        rr:predicate :isClientOf;
+        rr:objectMap [
+            rr:template "resource:User/{idUser}";
+        ];
+    ].
+
+<#OrganizationProjectMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT
+                c.id AS org_id,
+                p.id AS project_id
+            FROM client c
+            JOIN project p ON p."idClient" = c.id
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Organization/{org_id}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :hasProject;
+        rr:objectMap [
+            rr:template "resource:Project/{project_id}";
+        ];
+    ].
+
+<#OrganizationContactMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+        SELECT
+            id AS org_id,
+            id AS contact_client_id,
+            MD5("contactEmail") AS "hashedEmail"
+        FROM client
+        WHERE "contactName" IS NOT NULL AND "contactEmail" IS NOT NULL
+        """;
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Organization/{org_id}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :hasContact;
+        rr:objectMap [
+            rr:template "resource:Person/contact/{contact_client_id}-{hashedEmail}";
+        ];
+    ].
+
+
+########################################################################
+# Contact Mapping
+########################################################################
+<#ContactMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+        SELECT
+            id,
+            "contactName" AS "firstName",
+            '' AS "lastName",
+            "contactEmail" AS "email",
+            "contactPhone" AS "phoneNumber",
+            id AS "clientId",
+            MD5("contactEmail") AS "hashedEmail"
+        FROM client
+        WHERE "contactName" IS NOT NULL AND "contactEmail" IS NOT NULL
+        """;
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Person/contact/{clientId}-{hashedEmail}";
+        rr:class :Person;
+        rr:class :Agent;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :firstName;
+        rr:objectMap [ rr:column "firstName"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :lastName;
+        rr:objectMap [ rr:column "lastName"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :email;
+        rr:objectMap [ rr:column "email"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :phoneNumber;
+        rr:objectMap [ rr:column "phoneNumber"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isContactOf;
+        rr:objectMap [
+            rr:template "resource:Organization/{clientId}";
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :agentID;
+        rr:objectMap [ rr:template "{clientId}-{hashedEmail}"; rr:datatype xsd:string ];
+    ].
+
+
+########################################################################
+# Project Mapping
+########################################################################
+<#ProjectMapping>
+    rr:logicalTable [ rr:tableName "\"project\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Project/{id}";
+        rr:class :Project;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :name;
+        rr:objectMap [ rr:column "name"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :note;
+        rr:objectMap [ rr:column "note"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :belongsTo;
+        rr:objectMap [
+            rr:template "resource:Organization/{idClient}";
+        ];
+    ].
+
+<#ProjectContractMapping>
+    rr:logicalTable [ rr:tableName "\"contract\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Project/{idProject}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isCoveredBy;
+        rr:objectMap [
+            rr:template "resource:Contract/{id}";
+        ];
+    ].
+
+<#ProjectTaskMapping>
+    rr:logicalTable [ rr:tableName "\"assign\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Project/{idProject}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :hasAssignedTask;
+        rr:objectMap [
+            rr:template "resource:Project/{idProject}/Task/{idTask}";
+        ];
+    ].
+
+
+########################################################################
+# Task Mapping - Using Project-Task composite keys
+########################################################################
+<#TaskProjectMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+        SELECT
+            t.id AS task_id,
+            t."idUser",
+            t.title,
+            a."idProject" AS project_id
+        FROM task t
+        JOIN assign a ON t.id = a."idTask"
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Project/{project_id}/Task/{task_id}";
+        rr:class :Task;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :name;
+        rr:objectMap [ rr:column "title"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :description;
+        rr:objectMap [
+            rr:template "Description for task: {title}";
+            rr:datatype xsd:string
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isDefinedBy;
+        rr:objectMap [
+            rr:template "resource:User/{idUser}";
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isAssignedTo;
+        rr:objectMap [
+            rr:template "resource:Project/{project_id}";
+        ];
+    ].
+
+<#TaskReportMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+        SELECT
+            t.id AS task_id,
+            r.id AS report_id,
+            a."idProject" AS project_id
+        FROM task t
+        JOIN assign a ON t.id = a."idTask"
+        JOIN project p ON a."idProject" = p.id
+        JOIN contract c ON c."idProject" = p.id
+        JOIN report r ON r."idContract" = c.id
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Project/{project_id}/Task/{task_id}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :hasReport;
+        rr:objectMap [
+            rr:template "resource:Report/{report_id}";
+        ];
+    ].
+
+
+########################################################################
+# Location Mapping
+########################################################################
+<#LocationMapping>
+    rr:logicalTable [ rr:tableName "\"location\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Location/{id}";
+        rr:class :Location;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :name;
+        rr:objectMap [ rr:column "title"; rr:datatype xsd:string ];
+    ].
+
+<#LocationReportMapping>
+    rr:logicalTable [ rr:tableName "\"locatedAt\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Location/{idLocation}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isLocationOf;
+        rr:objectMap [
+            rr:template "resource:Report/{idReport}";
+        ];
+    ].
+
+
+########################################################################
+# Contract Mapping
+########################################################################
+<#ContractMapping>
+    rr:logicalTable [ rr:tableName "\"contract\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Contract/{id}";
+        rr:class :Contract;
+        rr:class :TemporalEntity;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :name;
+        rr:objectMap [ rr:column "name"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :note;
+        rr:objectMap [ rr:column "note"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :rate;
+        rr:objectMap [ rr:column "rate"; rr:datatype xsd:decimal ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :rateUnit;
+        rr:objectMap [ rr:column "rateUnit"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :startTimestamp;
+        rr:objectMap [
+            rr:template "{startDate}T00:00:00";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :endTimestamp;
+        rr:objectMap [
+            rr:template "{endDate}T23:59:59";
+            rr:datatype xsd:dateTime
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isAddedBy;
+        rr:objectMap [
+            rr:template "resource:User/{idUser}";
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :covers;
+        rr:objectMap [
+            rr:template "resource:Project/{idProject}";
+        ];
+    ].
+
+
+########################################################################
+# Report Mapping
+########################################################################
+<#ReportMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT
+                r.id,
+                r."idUser",
+                r."idContract",
+                r.note,
+                r.billable,
+                r."startTimestamp",
+                r."endTimestamp",
+                CASE
+                    WHEN EXTRACT(HOUR FROM r."breakTime") > 0
+                    THEN CONCAT(
+                        EXTRACT(HOUR FROM r."breakTime")::INTEGER, ' hours ',
+                        EXTRACT(MINUTE FROM r."breakTime")::INTEGER, ' minutes'
+                    )
+                    ELSE CONCAT(EXTRACT(MINUTE FROM r."breakTime")::INTEGER, ' minutes')
+                END AS formatted_break_time,
+                p."idClient" AS client_id
+            FROM report r
+            JOIN contract c ON r."idContract" = c.id
+            JOIN project p ON c."idProject" = p.id
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Report/{id}";
+        rr:class :Report;
+        rr:class :TemporalEntity;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :note;
+        rr:objectMap [ rr:column "note"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :billable;
+        rr:objectMap [ rr:column "billable"; rr:datatype xsd:boolean ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :startTimestamp;
+        rr:objectMap [ rr:column "startTimestamp"; rr:datatype xsd:dateTime ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :endTimestamp;
+        rr:objectMap [ rr:column "endTimestamp"; rr:datatype xsd:dateTime ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :breakTimeInterval;
+        rr:objectMap [ rr:column "formatted_break_time"; rr:datatype xsd:string ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate :isReportedBy;
+        rr:objectMap [ rr:template "resource:User/{idUser}" ];
+    ].
+
+<#ReportTaskMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT r.id AS report_id, t.id AS task_id, p.id AS project_id
+            FROM report r
+            JOIN contract c ON r."idContract" = c.id
+            JOIN project p ON c."idProject" = p.id
+            JOIN assign a ON a."idProject" = p.id
+            JOIN task t ON a."idTask" = t.id
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Report/{report_id}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isReportedFor;
+        rr:objectMap [
+            rr:template "resource:Project/{project_id}/Task/{task_id}";
+        ];
+    ].
+
+<#ReportLocationMapping>
+    rr:logicalTable [ rr:tableName "\"locatedAt\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Report/{idReport}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isReportedAt;
+        rr:objectMap [
+            rr:template "resource:Location/{idLocation}";
+        ];
+    ].
+
+<#ReportExpenseMapping>
+    rr:logicalTable [ rr:tableName "\"expenses\"" ];
+
+    rr:subjectMap [
+        rr:template "resource:Report/{idReport}";
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :hasExpense;
+        rr:objectMap [
+            rr:template "resource:Report/{idReport}/Expense/{price}-{note}";
+        ];
+    ].
+
+
+########################################################################
+# Expense Mapping
+########################################################################
+<#ExpenseMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT "idReport", price, note,
+                CASE
+                    WHEN note ILIKE '%travel%' OR note ILIKE '%flight%' OR note ILIKE '%taxi%' OR note ILIKE '%parking%' THEN 'Travel'
+                    WHEN note ILIKE '%meal%' OR note ILIKE '%food%' OR note ILIKE '%lunch%' OR note ILIKE '%snack%' THEN 'Meals'
+                    WHEN note ILIKE '%tech%' OR note ILIKE '%computer%' OR note ILIKE '%software%' THEN 'Technology'
+                    WHEN note ILIKE '%hardware%' THEN 'Hardware'
+                    WHEN note ILIKE '%office%' THEN 'Office'
+                    WHEN note ILIKE '%phone%' OR note ILIKE '%communication%' THEN 'Communication'
+                    WHEN note ILIKE '%professional%' OR note ILIKE '%consulting%' OR note ILIKE '%service%' THEN 'Professional'
+                    ELSE 'Other'
+                END AS expense_type
+            FROM "expenses"
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:Report/{idReport}/Expense/{price}-{note}";
+        rr:class :Expense;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :amount;
+        rr:objectMap [ rr:column "price"; rr:datatype xsd:decimal ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :note;
+        rr:objectMap [ rr:column "note"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :type;
+        rr:objectMap [ rr:column "expense_type"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :isIncurredFor;
+        rr:objectMap [
+            rr:template "resource:Report/{idReport}";
+        ];
+    ].
+
+
+########################################################################
+# Validation Status Mapping
+########################################################################
+<#ValidationStatusMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+        SELECT 'timerep-validation' AS "id",
+               'TimeRep Data Validation Status' AS "title",
+               'Current validation status of TimeRep data' AS "description",
+               '2025-04-30' AS "validationDate"
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:ValidationStatus/{id}";
+        rr:class :ValidationStatus;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:title;
+        rr:objectMap [ rr:column "title"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:description;
+        rr:objectMap [ rr:column "description"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate :validationDate;
+        rr:objectMap [ rr:column "validationDate"; rr:datatype xsd:date ];
+    ].
+
+
+########################################################################
+# Metadata and Provenance
+########################################################################
+<#MetadataMapping>
+    rr:logicalTable [
+        rr:sqlQuery """
+        SELECT 'timerep-dataset' AS "id",
+               'TimeRep RDF Dataset' AS "title",
+               'Generated from TimeRep relational database' AS "description",
+               '2025-04-20' AS "created"
+        """
+    ];
+
+    rr:subjectMap [
+        rr:template "resource:{id}";
+        rr:class <http://rdfs.org/ns/void#Dataset>;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:title;
+        rr:objectMap [ rr:column "title"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:description;
+        rr:objectMap [ rr:column "description"; rr:datatype xsd:string ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:created;
+        rr:objectMap [ rr:column "created"; rr:datatype xsd:date ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:publisher;
+        rr:objectMap [
+            rr:constant "TimeRep Team";
+            rr:datatype xsd:string
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:modified;
+        rr:objectMap [
+            # Today's date
+            rr:constant "2025-04-30"^^xsd:date;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:license;
+        rr:objectMap [
+            rr:constant "http://creativecommons.org/licenses/by/4.0/";
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:creator;
+        rr:objectMap [
+            rr:constant "TimeRep Team";
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate dcterms:source;
+        rr:objectMap [
+            rr:constant "TimeRep Relational Database";
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate <http://rdfs.org/ns/void#triples>;
+        rr:objectMap [
+            # This is a placeholder - you would ideally count the actual triples
+            rr:constant "1000"^^xsd:integer;
+        ];
+    ].

@@ -1,0 +1,616 @@
+<http://www.semanticweb.org/timerep/ontology#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.semanticweb.org/timerep/ontology#> <http://purl.org/dc/terms/creator> "Gilles Ooms"@en .
+<http://www.semanticweb.org/timerep/ontology#> <http://purl.org/dc/terms/creator> "Marie Goffin"@en .
+<http://www.semanticweb.org/timerep/ontology#> <http://purl.org/dc/terms/creator> "Martin Dengis"@en .
+<http://www.semanticweb.org/timerep/ontology#> <http://purl.org/dc/terms/creator> "Thomas Fredrich"@en .
+<http://www.semanticweb.org/timerep/ontology#> <http://purl.org/dc/terms/date> "2025-04-02"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://www.semanticweb.org/timerep/ontology#> <http://purl.org/dc/terms/title> "TimeRep Ontology"@en .
+<http://www.semanticweb.org/timerep/ontology#> <http://www.w3.org/2000/01/rdf-schema#comment> "TimeRep ontology for project management and time tracking"@en .
+<http://www.semanticweb.org/timerep/ontology#> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.semanticweb.org/timerep/shapes#> .
+<http://www.semanticweb.org/timerep/ontology#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/timerep/ontology#adds
+<http://www.semanticweb.org/timerep/ontology#adds> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#adds> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isAddedBy> .
+<http://www.semanticweb.org/timerep/ontology#adds> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#adds> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Contract> .
+<http://www.semanticweb.org/timerep/ontology#adds> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a User to a Contract"@en .
+<http://www.semanticweb.org/timerep/ontology#adds> <http://www.w3.org/2000/01/rdf-schema#label> "adds"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#belongsTo
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#hasProject> .
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Organization> .
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Project to a Organization"@en .
+<http://www.semanticweb.org/timerep/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#label> "belongsTo"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#covers
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isCoveredBy> .
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Contract> .
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Contract to a Project"@en .
+<http://www.semanticweb.org/timerep/ontology#covers> <http://www.w3.org/2000/01/rdf-schema#label> "covers"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#defines
+<http://www.semanticweb.org/timerep/ontology#defines> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#defines> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isDefinedBy> .
+<http://www.semanticweb.org/timerep/ontology#defines> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#defines> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#defines> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a User to a Task"@en .
+<http://www.semanticweb.org/timerep/ontology#defines> <http://www.w3.org/2000/01/rdf-schema#label> "defines"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasAssignedTask
+<http://www.semanticweb.org/timerep/ontology#hasAssignedTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasAssignedTask> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isAssignedTo> .
+<http://www.semanticweb.org/timerep/ontology#hasAssignedTask> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#hasAssignedTask> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#hasAssignedTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Project to the Tasks assigned to it"@en .
+<http://www.semanticweb.org/timerep/ontology#hasAssignedTask> <http://www.w3.org/2000/01/rdf-schema#label> "hasAssignedTask"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasClient
+<http://www.semanticweb.org/timerep/ontology#hasClient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasClient> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isClientOf> .
+<http://www.semanticweb.org/timerep/ontology#hasClient> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#hasClient> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Organization> .
+<http://www.semanticweb.org/timerep/ontology#hasClient> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a User to a client Organization"@en .
+<http://www.semanticweb.org/timerep/ontology#hasClient> <http://www.w3.org/2000/01/rdf-schema#label> "hasClient"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasContact
+<http://www.semanticweb.org/timerep/ontology#hasContact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasContact> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isContactOf> .
+<http://www.semanticweb.org/timerep/ontology#hasContact> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Organization> .
+<http://www.semanticweb.org/timerep/ontology#hasContact> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#hasContact> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Organization to its contact Person"@en .
+<http://www.semanticweb.org/timerep/ontology#hasContact> <http://www.w3.org/2000/01/rdf-schema#label> "hasContact"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasExpense
+<http://www.semanticweb.org/timerep/ontology#hasExpense> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasExpense> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isIncurredFor> .
+<http://www.semanticweb.org/timerep/ontology#hasExpense> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#hasExpense> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Expense> .
+<http://www.semanticweb.org/timerep/ontology#hasExpense> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Report to an Expense"@en .
+<http://www.semanticweb.org/timerep/ontology#hasExpense> <http://www.w3.org/2000/01/rdf-schema#label> "hasExpense"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasProject
+<http://www.semanticweb.org/timerep/ontology#hasProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasProject> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Organization> .
+<http://www.semanticweb.org/timerep/ontology#hasProject> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#hasProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an Organization to a Project"@en .
+<http://www.semanticweb.org/timerep/ontology#hasProject> <http://www.w3.org/2000/01/rdf-schema#label> "hasProject"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasReport
+<http://www.semanticweb.org/timerep/ontology#hasReport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasReport> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isReportedFor> .
+<http://www.semanticweb.org/timerep/ontology#hasReport> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#hasReport> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#hasReport> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Task to a Report"@en .
+<http://www.semanticweb.org/timerep/ontology#hasReport> <http://www.w3.org/2000/01/rdf-schema#label> "hasReport"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#hasValidationStatus
+<http://www.semanticweb.org/timerep/ontology#hasValidationStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#hasValidationStatus> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#validatedEntity> .
+<http://www.semanticweb.org/timerep/ontology#hasValidationStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.semanticweb.org/timerep/ontology#hasValidationStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#hasValidationStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an entity to its validation status"@en .
+<http://www.semanticweb.org/timerep/ontology#hasValidationStatus> <http://www.w3.org/2000/01/rdf-schema#label> "hasValidationStatus"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isAddedBy
+<http://www.semanticweb.org/timerep/ontology#isAddedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isAddedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isAddedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Contract> .
+<http://www.semanticweb.org/timerep/ontology#isAddedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#isAddedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Contract to a User"@en .
+<http://www.semanticweb.org/timerep/ontology#isAddedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isAddedBy"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isAssignedTo
+<http://www.semanticweb.org/timerep/ontology#isAssignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isAssignedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Task to a Project it is assigned to"@en .
+<http://www.semanticweb.org/timerep/ontology#isAssignedTo> <http://www.w3.org/2000/01/rdf-schema#label> "isAssignedTo"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isClientOf
+<http://www.semanticweb.org/timerep/ontology#isClientOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isClientOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Organization> .
+<http://www.semanticweb.org/timerep/ontology#isClientOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#isClientOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an Organization to a User. To be considered client of a User, the Organization must have a Project coveredBy a Contract with that User."@en .
+<http://www.semanticweb.org/timerep/ontology#isClientOf> <http://www.w3.org/2000/01/rdf-schema#label> "isClientOf"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isContactOf
+<http://www.semanticweb.org/timerep/ontology#isContactOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isContactOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#isContactOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Organization> .
+<http://www.semanticweb.org/timerep/ontology#isContactOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Contact Person to the Organization it represents"@en .
+<http://www.semanticweb.org/timerep/ontology#isContactOf> <http://www.w3.org/2000/01/rdf-schema#label> "isContactOf"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isCoveredBy
+<http://www.semanticweb.org/timerep/ontology#isCoveredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isCoveredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#isCoveredBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Contract> .
+<http://www.semanticweb.org/timerep/ontology#isCoveredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Project to a Contract"@en .
+<http://www.semanticweb.org/timerep/ontology#isCoveredBy> <http://www.w3.org/2000/01/rdf-schema#label> "isCoveredBy"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isDefinedBy
+<http://www.semanticweb.org/timerep/ontology#isDefinedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isDefinedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Task to a User"@en .
+<http://www.semanticweb.org/timerep/ontology#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isDefinedBy"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isIncurredFor
+<http://www.semanticweb.org/timerep/ontology#isIncurredFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isIncurredFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isIncurredFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Expense> .
+<http://www.semanticweb.org/timerep/ontology#isIncurredFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#isIncurredFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an Expense to a Report"@en .
+<http://www.semanticweb.org/timerep/ontology#isIncurredFor> <http://www.w3.org/2000/01/rdf-schema#label> "isIncurredFor"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isLocationOf
+<http://www.semanticweb.org/timerep/ontology#isLocationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isLocationOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#isReportedAt> .
+<http://www.semanticweb.org/timerep/ontology#isLocationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Location> .
+<http://www.semanticweb.org/timerep/ontology#isLocationOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#isLocationOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Location to the Reports that were created at this location"@en .
+<http://www.semanticweb.org/timerep/ontology#isLocationOf> <http://www.w3.org/2000/01/rdf-schema#label> "isLocationOf"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isReportedAt
+<http://www.semanticweb.org/timerep/ontology#isReportedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isReportedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isReportedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#isReportedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Location> .
+<http://www.semanticweb.org/timerep/ontology#isReportedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Report to the Location where work was performed"@en .
+<http://www.semanticweb.org/timerep/ontology#isReportedAt> <http://www.w3.org/2000/01/rdf-schema#label> "isReportedAt"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isReportedBy
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#logsReport> .
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Report to a User"@en .
+<http://www.semanticweb.org/timerep/ontology#isReportedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isReportedBy"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isReportedFor
+<http://www.semanticweb.org/timerep/ontology#isReportedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isReportedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#isReportedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#isReportedFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#isReportedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Report to one or multiple Tasks jointly"@en .
+<http://www.semanticweb.org/timerep/ontology#isReportedFor> <http://www.w3.org/2000/01/rdf-schema#label> "isReportedFor"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#isValidatedBy
+<http://www.semanticweb.org/timerep/ontology#isValidatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#isValidatedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.semanticweb.org/timerep/ontology#validates> .
+<http://www.semanticweb.org/timerep/ontology#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.semanticweb.org/timerep/ontology#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a validation status to the shape that produced it"@en .
+<http://www.semanticweb.org/timerep/ontology#isValidatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isValidatedBy"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#logsReport
+<http://www.semanticweb.org/timerep/ontology#logsReport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#logsReport> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#User> .
+<http://www.semanticweb.org/timerep/ontology#logsReport> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#logsReport> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a User to the Report he/she logs"@en .
+<http://www.semanticweb.org/timerep/ontology#logsReport> <http://www.w3.org/2000/01/rdf-schema#label> "logsReport"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#validatedEntity
+<http://www.semanticweb.org/timerep/ontology#validatedEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#validatedEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#validatedEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#validatedEntity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.semanticweb.org/timerep/ontology#validatedEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a validation status to the entity that was validated"@en .
+<http://www.semanticweb.org/timerep/ontology#validatedEntity> <http://www.w3.org/2000/01/rdf-schema#label> "validatedEntity"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#validates
+<http://www.semanticweb.org/timerep/ontology#validates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/timerep/ontology#validates> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.semanticweb.org/timerep/ontology#validates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#validates> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a shape or validator to the validation status it produced"@en .
+<http://www.semanticweb.org/timerep/ontology#validates> <http://www.w3.org/2000/01/rdf-schema#label> "validates"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/timerep/ontology#agentID
+<http://www.semanticweb.org/timerep/ontology#agentID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#agentID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#agentID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Agent> .
+<http://www.semanticweb.org/timerep/ontology#agentID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#agentID> <http://www.w3.org/2000/01/rdf-schema#comment> "A unique identifier for an Agent in the system"@en .
+<http://www.semanticweb.org/timerep/ontology#agentID> <http://www.w3.org/2000/01/rdf-schema#label> "agentID"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#amount
+<http://www.semanticweb.org/timerep/ontology#amount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#amount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#amount> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Expense> .
+<http://www.semanticweb.org/timerep/ontology#amount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.semanticweb.org/timerep/ontology#amount> <http://www.w3.org/2000/01/rdf-schema#comment> "The amount of an Expense"@en .
+<http://www.semanticweb.org/timerep/ontology#amount> <http://www.w3.org/2000/01/rdf-schema#label> "amount"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#billable
+<http://www.semanticweb.org/timerep/ontology#billable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#billable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#billable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#billable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://www.semanticweb.org/timerep/ontology#billable> <http://www.w3.org/2000/01/rdf-schema#comment> "Whether a Report is billable to the Organization or not"@en .
+<http://www.semanticweb.org/timerep/ontology#billable> <http://www.w3.org/2000/01/rdf-schema#label> "billable"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#breakTimeInterval
+<http://www.semanticweb.org/timerep/ontology#breakTimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#breakTimeInterval> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#breakTimeInterval> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#breakTimeInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "Stores the raw break interval value within a report."@en .
+<http://www.semanticweb.org/timerep/ontology#breakTimeInterval> <http://www.w3.org/2000/01/rdf-schema#label> "breakTimeInterval"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#description
+<http://www.semanticweb.org/timerep/ontology#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#description> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#description> <http://www.w3.org/2000/01/rdf-schema#comment> "The description of a Task"@en .
+<http://www.semanticweb.org/timerep/ontology#description> <http://www.w3.org/2000/01/rdf-schema#label> "description"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#email
+<http://www.semanticweb.org/timerep/ontology#email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#email> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#email> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#email> <http://www.w3.org/2000/01/rdf-schema#comment> "The email of a Person"@en .
+<http://www.semanticweb.org/timerep/ontology#email> <http://www.w3.org/2000/01/rdf-schema#label> "email"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#endTimestamp
+<http://www.semanticweb.org/timerep/ontology#endTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#endTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#endTimestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#endTimestamp> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.semanticweb.org/timerep/ontology#endTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "The precise end time of a temporal entity"@en .
+<http://www.semanticweb.org/timerep/ontology#endTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "endTimestamp"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#errorCount
+<http://www.semanticweb.org/timerep/ontology#errorCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#errorCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#errorCount> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#errorCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://www.semanticweb.org/timerep/ontology#errorCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of errors found during validation"@en .
+<http://www.semanticweb.org/timerep/ontology#errorCount> <http://www.w3.org/2000/01/rdf-schema#label> "errorCount"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#firstName
+<http://www.semanticweb.org/timerep/ontology#firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#firstName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#firstName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#firstName> <http://www.w3.org/2000/01/rdf-schema#comment> "The firstName of a Person"@en .
+<http://www.semanticweb.org/timerep/ontology#firstName> <http://www.w3.org/2000/01/rdf-schema#label> "firstName"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#lastName
+<http://www.semanticweb.org/timerep/ontology#lastName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#lastName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#lastName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#lastName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#lastName> <http://www.w3.org/2000/01/rdf-schema#comment> "The lastName of a Person"@en .
+<http://www.semanticweb.org/timerep/ontology#lastName> <http://www.w3.org/2000/01/rdf-schema#label> "lastName"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#name
+<http://www.semanticweb.org/timerep/ontology#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#name> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Task> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Project> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Organization> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Location> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Contract> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the object Entity"@en .
+<http://www.semanticweb.org/timerep/ontology#name> <http://www.w3.org/2000/01/rdf-schema#label> "name"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#note
+<http://www.semanticweb.org/timerep/ontology#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#note> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Report> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Project> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Organization> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Expense> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Contract> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#note> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#note> <http://www.w3.org/2000/01/rdf-schema#comment> "A note set by the User of the TimeRep app relative to the Entity"@en .
+<http://www.semanticweb.org/timerep/ontology#note> <http://www.w3.org/2000/01/rdf-schema#label> "note"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#phoneNumber
+<http://www.semanticweb.org/timerep/ontology#phoneNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#phoneNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#phoneNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#phoneNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "The phoneNumber of a Person."@en .
+<http://www.semanticweb.org/timerep/ontology#phoneNumber> <http://www.w3.org/2000/01/rdf-schema#label> "phoneNumber"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#rate
+<http://www.semanticweb.org/timerep/ontology#rate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#rate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#rate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Contract> .
+<http://www.semanticweb.org/timerep/ontology#rate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.semanticweb.org/timerep/ontology#rate> <http://www.w3.org/2000/01/rdf-schema#comment> "The rate per hour charged to an Organization with regards to a Contract"@en .
+<http://www.semanticweb.org/timerep/ontology#rate> <http://www.w3.org/2000/01/rdf-schema#label> "rate"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#rateUnit
+<http://www.semanticweb.org/timerep/ontology#rateUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#rateUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#rateUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Contract> .
+<http://www.semanticweb.org/timerep/ontology#rateUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#rateUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "The rateUnit associated to the rate charged to an Organization for a particular Contract"@en .
+<http://www.semanticweb.org/timerep/ontology#rateUnit> <http://www.w3.org/2000/01/rdf-schema#label> "rateUnit"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#startTimestamp
+<http://www.semanticweb.org/timerep/ontology#startTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#startTimestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#startTimestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#startTimestamp> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.semanticweb.org/timerep/ontology#startTimestamp> <http://www.w3.org/2000/01/rdf-schema#comment> "The precise start time of a temporal entity"@en .
+<http://www.semanticweb.org/timerep/ontology#startTimestamp> <http://www.w3.org/2000/01/rdf-schema#label> "startTimestamp"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#type
+<http://www.semanticweb.org/timerep/ontology#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#Expense> .
+<http://www.semanticweb.org/timerep/ontology#type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#type> <http://www.w3.org/2000/01/rdf-schema#comment> "The type (travel, materials, etc) of an Expense"@en .
+<http://www.semanticweb.org/timerep/ontology#type> <http://www.w3.org/2000/01/rdf-schema#label> "type"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#validationDate
+<http://www.semanticweb.org/timerep/ontology#validationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#validationDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://www.semanticweb.org/timerep/ontology#validationDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date when the validation was performed"@en .
+<http://www.semanticweb.org/timerep/ontology#validationDate> <http://www.w3.org/2000/01/rdf-schema#label> "validationDate"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#validationMessage
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/2000/01/rdf-schema#comment> "Detailed message describing the validation result"@en .
+<http://www.semanticweb.org/timerep/ontology#validationMessage> <http://www.w3.org/2000/01/rdf-schema#label> "validationMessage"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#validationResult
+<http://www.semanticweb.org/timerep/ontology#validationResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#validationResult> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#validationResult> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.semanticweb.org/timerep/ontology#validationResult> <http://www.w3.org/2000/01/rdf-schema#comment> "The overall result of validation (e.g., PASSED, FAILED, WARNING)"@en .
+<http://www.semanticweb.org/timerep/ontology#validationResult> <http://www.w3.org/2000/01/rdf-schema#label> "validationResult"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#warningCount
+<http://www.semanticweb.org/timerep/ontology#warningCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/timerep/ontology#warningCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.semanticweb.org/timerep/ontology#warningCount> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#warningCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+<http://www.semanticweb.org/timerep/ontology#warningCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of warnings found during validation"@en .
+<http://www.semanticweb.org/timerep/ontology#warningCount> <http://www.w3.org/2000/01/rdf-schema#label> "warningCount"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/timerep/ontology#Agent
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Expense> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Location> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2002/07/owl#disjointUnionOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Person> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.semanticweb.org/timerep/ontology#Organization> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity capable of performing actions within the TimeRep system, serving as the common superclass for both persons and organizational entities."@en .
+<http://www.semanticweb.org/timerep/ontology#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Contract
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/timerep/ontology#Project> .
+_:genid15 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#covers> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/timerep/ontology#User> .
+_:genid16 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#isAddedBy> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Report> .
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a Contract in Timerep system"@en .
+<http://www.semanticweb.org/timerep/ontology#Contract> <http://www.w3.org/2000/01/rdf-schema#label> "Contract"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Expense
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/timerep/ontology#Report> .
+_:genid17 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#isIncurredFor> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Location> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an Expense in Timerep system"@en .
+<http://www.semanticweb.org/timerep/ontology#Expense> <http://www.w3.org/2000/01/rdf-schema#label> "Expense"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Location
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Project> .
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a Location in Timerep system, which can be general (e.g., 'Home Working', 'Office') or specific (e.g., a physical address). This concept may differ from location definitions in other systems."@en .
+<http://www.semanticweb.org/timerep/ontology#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Organization
+<http://www.semanticweb.org/timerep/ontology#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/timerep/ontology#Agent> .
+<http://www.semanticweb.org/timerep/ontology#Organization> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an Organization (company) in TimeRep system. Can be linked to a User via the isClientOf predicate."@en .
+<http://www.semanticweb.org/timerep/ontology#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Person
+<http://www.semanticweb.org/timerep/ontology#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/timerep/ontology#Agent> .
+<http://www.semanticweb.org/timerep/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the generic concept of a Person"@en .
+<http://www.semanticweb.org/timerep/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Project
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/timerep/ontology#Organization> .
+_:genid18 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#belongsTo> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#Task> .
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "A defined body of work commissioned by an Organization, with clear boundaries, deliverables, and timeframes. Projects provide the context within which tasks are performed and cannot be equivalent to tasks."@en .
+<http://www.semanticweb.org/timerep/ontology#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Report
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.semanticweb.org/timerep/ontology#Location> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#isReportedAt> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.semanticweb.org/timerep/ontology#Task> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#isReportedFor> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/timerep/ontology#User> .
+_:genid21 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#isReportedBy> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a Report in Timerep system"@en .
+<http://www.semanticweb.org/timerep/ontology#Report> <http://www.w3.org/2000/01/rdf-schema#label> "Report"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#Task
+<http://www.semanticweb.org/timerep/ontology#Task> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#Task> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#onClass> <http://www.semanticweb.org/timerep/ontology#Project> .
+_:genid22 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#isAssignedTo> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#Task> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#TemporalEntity> .
+<http://www.semanticweb.org/timerep/ontology#Task> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#Task> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific activity or unit of work performed within the scope of a project. Tasks represent the actual work being done by users and tracked in reports."@en .
+<http://www.semanticweb.org/timerep/ontology#Task> <http://www.w3.org/2000/01/rdf-schema#label> "Task"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#TemporalEntity
+<http://www.semanticweb.org/timerep/ontology#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#TemporalEntity> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.semanticweb.org/timerep/ontology#ValidationStatus> .
+<http://www.semanticweb.org/timerep/ontology#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an entity with temporal dimension in the TimeRep system"@en .
+<http://www.semanticweb.org/timerep/ontology#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#label> "TemporalEntity"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#User
+<http://www.semanticweb.org/timerep/ontology#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/timerep/ontology#Person> .
+<http://www.semanticweb.org/timerep/ontology#User> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a User in TimeRep system"@en .
+<http://www.semanticweb.org/timerep/ontology#User> <http://www.w3.org/2000/01/rdf-schema#label> "User"@en .
+# 
+# http://www.semanticweb.org/timerep/ontology#ValidationStatus
+<http://www.semanticweb.org/timerep/ontology#ValidationStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/timerep/ontology#ValidationStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#validatedEntity> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#ValidationStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid24 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://www.semanticweb.org/timerep/ontology#validationResult> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.semanticweb.org/timerep/ontology#ValidationStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the validation status of entities in the TimeRep system based on SHACL constraints."@en .
+<http://www.semanticweb.org/timerep/ontology#ValidationStatus> <http://www.w3.org/2000/01/rdf-schema#label> "ValidationStatus"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

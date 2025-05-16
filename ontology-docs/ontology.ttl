@@ -1,0 +1,639 @@
+@prefix : <http://www.semanticweb.org/timerep/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/timerep/ontology#> .
+
+<http://www.semanticweb.org/timerep/ontology#> rdf:type owl:Ontology ;
+                                                <http://purl.org/dc/terms/creator> "Gilles Ooms"@en ,
+                                                                                   "Marie Goffin"@en ,
+                                                                                   "Martin Dengis"@en ,
+                                                                                   "Thomas Fredrich"@en ;
+                                                <http://purl.org/dc/terms/date> "2025-04-02"^^xsd:date ;
+                                                <http://purl.org/dc/terms/title> "TimeRep Ontology"@en ;
+                                                rdfs:comment "TimeRep ontology for project management and time tracking"@en ;
+                                                rdfs:seeAlso <http://www.semanticweb.org/timerep/shapes#> ;
+                                                owl:versionInfo "1.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/timerep/ontology#adds
+:adds rdf:type owl:ObjectProperty ;
+      owl:inverseOf :isAddedBy ;
+      rdfs:domain :User ;
+      rdfs:range :Contract ;
+      rdfs:comment "Relates a User to a Contract"@en ;
+      rdfs:label "adds"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#belongsTo
+:belongsTo rdf:type owl:ObjectProperty ;
+           owl:inverseOf :hasProject ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Project ;
+           rdfs:range :Organization ;
+           rdfs:comment "Relates a Project to a Organization"@en ;
+           rdfs:label "belongsTo"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#covers
+:covers rdf:type owl:ObjectProperty ;
+        owl:inverseOf :isCoveredBy ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Contract ;
+        rdfs:range :Project ;
+        rdfs:comment "Relates a Contract to a Project"@en ;
+        rdfs:label "covers"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#defines
+:defines rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isDefinedBy ;
+         rdfs:domain :User ;
+         rdfs:range :Task ;
+         rdfs:comment "Relates a User to a Task"@en ;
+         rdfs:label "defines"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasAssignedTask
+:hasAssignedTask rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :isAssignedTo ;
+                 rdfs:domain :Project ;
+                 rdfs:range :Task ;
+                 rdfs:comment "Relates a Project to the Tasks assigned to it"@en ;
+                 rdfs:label "hasAssignedTask"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasClient
+:hasClient rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isClientOf ;
+           rdfs:domain :User ;
+           rdfs:range :Organization ;
+           rdfs:comment "Relates a User to a client Organization"@en ;
+           rdfs:label "hasClient"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasContact
+:hasContact rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isContactOf ;
+            rdfs:domain :Organization ;
+            rdfs:range :Person ;
+            rdfs:comment "Relates a Organization to its contact Person"@en ;
+            rdfs:label "hasContact"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasExpense
+:hasExpense rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isIncurredFor ;
+            rdfs:domain :Report ;
+            rdfs:range :Expense ;
+            rdfs:comment "Relates a Report to an Expense"@en ;
+            rdfs:label "hasExpense"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasProject
+:hasProject rdf:type owl:ObjectProperty ;
+            rdfs:domain :Organization ;
+            rdfs:range :Project ;
+            rdfs:comment "Relates an Organization to a Project"@en ;
+            rdfs:label "hasProject"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasReport
+:hasReport rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isReportedFor ;
+           rdfs:domain :Task ;
+           rdfs:range :Report ;
+           rdfs:comment "Relates a Task to a Report"@en ;
+           rdfs:label "hasReport"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#hasValidationStatus
+:hasValidationStatus rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :validatedEntity ;
+                     rdfs:domain owl:Thing ;
+                     rdfs:range :ValidationStatus ;
+                     rdfs:comment "Links an entity to its validation status"@en ;
+                     rdfs:label "hasValidationStatus"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isAddedBy
+:isAddedBy rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Contract ;
+           rdfs:range :User ;
+           rdfs:comment "Relates a Contract to a User"@en ;
+           rdfs:label "isAddedBy"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isAssignedTo
+:isAssignedTo rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Task ;
+              rdfs:range :Project ;
+              rdfs:comment "Relates a Task to a Project it is assigned to"@en ;
+              rdfs:label "isAssignedTo"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isClientOf
+:isClientOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Organization ;
+            rdfs:range :User ;
+            rdfs:comment "Relates an Organization to a User. To be considered client of a User, the Organization must have a Project coveredBy a Contract with that User."@en ;
+            rdfs:label "isClientOf"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isContactOf
+:isContactOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Person ;
+             rdfs:range :Organization ;
+             rdfs:comment "Relates a Contact Person to the Organization it represents"@en ;
+             rdfs:label "isContactOf"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isCoveredBy
+:isCoveredBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Project ;
+             rdfs:range :Contract ;
+             rdfs:comment "Relates a Project to a Contract"@en ;
+             rdfs:label "isCoveredBy"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isDefinedBy
+:isDefinedBy rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Task ;
+             rdfs:range :User ;
+             rdfs:comment "Relates a Task to a User"@en ;
+             rdfs:label "isDefinedBy"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isIncurredFor
+:isIncurredFor rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Expense ;
+               rdfs:range :Report ;
+               rdfs:comment "Relates an Expense to a Report"@en ;
+               rdfs:label "isIncurredFor"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isLocationOf
+:isLocationOf rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isReportedAt ;
+              rdfs:domain :Location ;
+              rdfs:range :Report ;
+              rdfs:comment "Relates a Location to the Reports that were created at this location"@en ;
+              rdfs:label "isLocationOf"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isReportedAt
+:isReportedAt rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Report ;
+              rdfs:range :Location ;
+              rdfs:comment "Relates a Report to the Location where work was performed"@en ;
+              rdfs:label "isReportedAt"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isReportedBy
+:isReportedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :logsReport ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Report ;
+              rdfs:range :User ;
+              rdfs:comment "Relates a Report to a User"@en ;
+              rdfs:label "isReportedBy"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isReportedFor
+:isReportedFor rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Report ;
+               rdfs:range :Task ;
+               rdfs:comment "Relates a Report to one or multiple Tasks jointly"@en ;
+               rdfs:label "isReportedFor"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#isValidatedBy
+:isValidatedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf :validates ;
+               rdfs:domain :ValidationStatus ;
+               rdfs:range owl:Thing ;
+               rdfs:comment "Links a validation status to the shape that produced it"@en ;
+               rdfs:label "isValidatedBy"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#logsReport
+:logsReport rdf:type owl:ObjectProperty ;
+            rdfs:domain :User ;
+            rdfs:range :Report ;
+            rdfs:comment "Relates a User to the Report he/she logs"@en ;
+            rdfs:label "logsReport"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#validatedEntity
+:validatedEntity rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :ValidationStatus ;
+                 rdfs:range owl:Thing ;
+                 rdfs:comment "Links a validation status to the entity that was validated"@en ;
+                 rdfs:label "validatedEntity"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#validates
+:validates rdf:type owl:ObjectProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range :ValidationStatus ;
+           rdfs:comment "Links a shape or validator to the validation status it produced"@en ;
+           rdfs:label "validates"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/timerep/ontology#agentID
+:agentID rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Agent ;
+         rdfs:range xsd:string ;
+         rdfs:comment "A unique identifier for an Agent in the system"@en ;
+         rdfs:label "agentID"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#amount
+:amount rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Expense ;
+        rdfs:range xsd:decimal ;
+        rdfs:comment "The amount of an Expense"@en ;
+        rdfs:label "amount"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#billable
+:billable rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Report ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "Whether a Report is billable to the Organization or not"@en ;
+          rdfs:label "billable"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#breakTimeInterval
+:breakTimeInterval rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Report ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Stores the raw break interval value within a report."@en ;
+                   rdfs:label "breakTimeInterval"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#description
+:description rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Task ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The description of a Task"@en ;
+             rdfs:label "description"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#email
+:email rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Person ;
+       rdfs:range xsd:string ;
+       rdfs:comment "The email of a Person"@en ;
+       rdfs:label "email"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#endTimestamp
+:endTimestamp rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :TemporalEntity ;
+              rdfs:range xsd:dateTime ;
+              rdfs:comment "The precise end time of a temporal entity"@en ;
+              rdfs:label "endTimestamp"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#errorCount
+:errorCount rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :ValidationStatus ;
+            rdfs:range xsd:int ;
+            rdfs:comment "The number of errors found during validation"@en ;
+            rdfs:label "errorCount"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#firstName
+:firstName rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           rdfs:comment "The firstName of a Person"@en ;
+           rdfs:label "firstName"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#lastName
+:lastName rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The lastName of a Person"@en ;
+          rdfs:label "lastName"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#name
+:name rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Contract
+                                  :Location
+                                  :Organization
+                                  :Project
+                                  :Task
+                                )
+                  ] ;
+      rdfs:range xsd:string ;
+      rdfs:comment "The name of the object Entity"@en ;
+      rdfs:label "name"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#note
+:note rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Contract
+                                  :Expense
+                                  :Organization
+                                  :Project
+                                  :Report
+                                )
+                  ] ;
+      rdfs:range xsd:string ;
+      rdfs:comment "A note set by the User of the TimeRep app relative to the Entity"@en ;
+      rdfs:label "note"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#phoneNumber
+:phoneNumber rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The phoneNumber of a Person."@en ;
+             rdfs:label "phoneNumber"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#rate
+:rate rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Contract ;
+      rdfs:range xsd:decimal ;
+      rdfs:comment "The rate per hour charged to an Organization with regards to a Contract"@en ;
+      rdfs:label "rate"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#rateUnit
+:rateUnit rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Contract ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The rateUnit associated to the rate charged to an Organization for a particular Contract"@en ;
+          rdfs:label "rateUnit"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#startTimestamp
+:startTimestamp rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :TemporalEntity ;
+                rdfs:range xsd:dateTime ;
+                rdfs:comment "The precise start time of a temporal entity"@en ;
+                rdfs:label "startTimestamp"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#type
+:type rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Expense ;
+      rdfs:range xsd:string ;
+      rdfs:comment "The type (travel, materials, etc) of an Expense"@en ;
+      rdfs:label "type"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#validationDate
+:validationDate rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :ValidationStatus ;
+                rdfs:range xsd:date ;
+                rdfs:comment "The date when the validation was performed"@en ;
+                rdfs:label "validationDate"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#validationMessage
+:validationMessage rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :ValidationStatus ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Detailed message describing the validation result"@en ;
+                   rdfs:label "validationMessage"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#validationResult
+:validationResult rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :ValidationStatus ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The overall result of validation (e.g., PASSED, FAILED, WARNING)"@en ;
+                  rdfs:label "validationResult"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#warningCount
+:warningCount rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :ValidationStatus ;
+              rdfs:range xsd:int ;
+              rdfs:comment "The number of warnings found during validation"@en ;
+              rdfs:label "warningCount"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/timerep/ontology#Agent
+:Agent rdf:type owl:Class ;
+       owl:disjointWith :Expense ,
+                        :Location ,
+                        :Project ,
+                        :Task ,
+                        :TemporalEntity ,
+                        :ValidationStatus ;
+       owl:disjointUnionOf ( :Organization
+                             :Person
+                           ) ;
+       rdfs:comment "An entity capable of performing actions within the TimeRep system, serving as the common superclass for both persons and organizational entities."@en ;
+       rdfs:label "Agent"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Contract
+:Contract rdf:type owl:Class ;
+          rdfs:subClassOf :TemporalEntity ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :covers ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Project
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isAddedBy ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :User
+                          ] ;
+          owl:disjointWith :Report ;
+          rdfs:comment "Represents a Contract in Timerep system"@en ;
+          rdfs:label "Contract"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Expense
+:Expense rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :isIncurredFor ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Report
+                         ] ;
+         owl:disjointWith :Location ,
+                          :Project ,
+                          :Task ,
+                          :TemporalEntity ,
+                          :ValidationStatus ;
+         rdfs:comment "Represents an Expense in Timerep system"@en ;
+         rdfs:label "Expense"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Location
+:Location rdf:type owl:Class ;
+          owl:disjointWith :Project ,
+                           :Task ,
+                           :TemporalEntity ,
+                           :ValidationStatus ;
+          rdfs:comment "Represents a Location in Timerep system, which can be general (e.g., 'Home Working', 'Office') or specific (e.g., a physical address). This concept may differ from location definitions in other systems."@en ;
+          rdfs:label "Location"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :Agent ;
+              owl:disjointWith :Person ;
+              rdfs:comment "Represents an Organization (company) in TimeRep system. Can be linked to a User via the isClientOf predicate."@en ;
+              rdfs:label "Organization"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Agent ;
+        rdfs:comment "Represents the generic concept of a Person"@en ;
+        rdfs:label "Person"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Project
+:Project rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :belongsTo ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Organization
+                         ] ;
+         owl:disjointWith :Task ,
+                          :TemporalEntity ,
+                          :ValidationStatus ;
+         rdfs:comment "A defined body of work commissioned by an Organization, with clear boundaries, deliverables, and timeframes. Projects provide the context within which tasks are performed and cannot be equivalent to tasks."@en ;
+         rdfs:label "Project"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Report
+:Report rdf:type owl:Class ;
+        rdfs:subClassOf :TemporalEntity ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isReportedAt ;
+                          owl:someValuesFrom :Location
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isReportedFor ;
+                          owl:someValuesFrom :Task
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isReportedBy ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :User
+                        ] ;
+        rdfs:comment "Represents a Report in Timerep system"@en ;
+        rdfs:label "Report"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#Task
+:Task rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :isAssignedTo ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Project
+                      ] ;
+      owl:disjointWith :TemporalEntity ,
+                       :ValidationStatus ;
+      rdfs:comment "A specific activity or unit of work performed within the scope of a project. Tasks represent the actual work being done by users and tracked in reports."@en ;
+      rdfs:label "Task"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#TemporalEntity
+:TemporalEntity rdf:type owl:Class ;
+                owl:disjointWith :ValidationStatus ;
+                rdfs:comment "Represents an entity with temporal dimension in the TimeRep system"@en ;
+                rdfs:label "TemporalEntity"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf :Person ;
+      rdfs:comment "Represents a User in TimeRep system"@en ;
+      rdfs:label "User"@en .
+
+
+###  http://www.semanticweb.org/timerep/ontology#ValidationStatus
+:ValidationStatus rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :validatedEntity ;
+                                    owl:someValuesFrom owl:Thing
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :validationResult ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ;
+                  rdfs:comment "Represents the validation status of entities in the TimeRep system based on SHACL constraints."@en ;
+                  rdfs:label "ValidationStatus"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

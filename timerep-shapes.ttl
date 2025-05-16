@@ -1,0 +1,569 @@
+@prefix : <http://www.semanticweb.org/timerep/ontology#> .
+@prefix shapes: <http://www.semanticweb.org/timerep/shapes#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+#################################################################
+# TimeRep SHACL Validation Framework
+#################################################################
+
+# Overall documentation for the validation framework
+shapes:TimeRepValidationFramework a sh:NodeShape ;
+    rdfs:label "TimeRep Validation Framework" ;
+    rdfs:comment """
+        This validation framework ensures data quality and enforces business rules
+        for the TimeRep system. It includes validation for all core entities
+        (Persons, Organizations, Projects, Tasks, Contracts, Reports) and their
+        relationships. Key business rules like the Report-Project-Contract relationship
+        are enforced as violations, while advisory rules are marked as warnings.
+    """ ;
+    dc:creator "TimeRep Team" ;
+    dc:date "2025-05-13" ;
+    dc:description "SHACL validation rules for TimeRep knowledge graph" .
+
+#################################################################
+# Person and Agent Validation Rules
+#################################################################
+
+# Person must be either a User or a isContactOf Organization
+shapes:PersonTypeShape a sh:NodeShape ;
+    rdfs:label "Person Type Validation" ;
+    rdfs:comment """
+        Ensures that every Person in the knowledge graph is assigned a specific role as
+        either a User or a Contact (through isContactOf relationship).
+    """ ;
+    sh:targetClass :Person ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "Person must be either a User or play the role of a contact with an Organization through the isContactOf predicate." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this
+            WHERE {
+                ?this a :Person .
+                FILTER NOT EXISTS { ?this a :User }
+                FILTER NOT EXISTS { ?this :isContactOf ?org }
+            }
+        """ ;
+    ] .
+
+# Person Properties Validation
+shapes:PersonPropertiesShape a sh:NodeShape ;
+    rdfs:label "Person Properties Validation" ;
+    rdfs:comment """
+        Validates required properties for all Person entities. Each Person must have
+        a firstName, lastName, and a properly formatted email address.
+    """ ;
+    sh:targetClass :Person ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :firstName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Every Person must have a firstName. Please add a :firstName property with a string value (should not be an empty string)." ;
+    ] ;
+    sh:property [
+        sh:path :lastName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Every Person must have a lastName. Please add a :lastName property with a string value." ;
+    ] ;
+    sh:property [
+        sh:path :email ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" ;
+        sh:message "Invalid email format. Please ensure the email follows standard format (e.g., name@example.com)." ;
+    ] .
+
+# Agent Identification Validation
+shapes:AgentIdentificationShape a sh:NodeShape ;
+    rdfs:label "Agent Identification Validation" ;
+    rdfs:comment """
+        Ensures every Agent (Person or Organization) has a unique identifier.
+        This is essential for maintaining referential integrity across the system.
+    """ ;
+    sh:targetClass :Agent ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :agentID ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every Agent must have exactly one agentID. Please add an :agentID property with a unique string value." ;
+    ] .
+
+#################################################################
+# Organization Validation Rules
+#################################################################
+
+# Organization Basic Properties
+shapes:OrganizationShape a sh:NodeShape ;
+    rdfs:label "Organization Properties Validation" ;
+    rdfs:comment """
+        Validates basic properties for Organization entities. Each Organization must
+        have a name. Note that Organizations are not required to have Contact persons
+        as per the relaxed axiom decided by the TimeRep team.
+    """ ;
+    sh:targetClass :Organization ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Organization must have a name. Please add a :name property with a string value." ;
+    ] .
+
+# Organization-User Relationship
+shapes:OrganizationClientRelationshipShape a sh:NodeShape ;
+    rdfs:label "Organization-User Client Relationship" ;
+    rdfs:comment """
+        Validates the client relationship between Organizations and Users.
+        An Organization can be a client of multiple Users or no Users at all,
+        so no cardinality constraints are enforced.
+    """ ;
+    sh:targetClass :Organization ;
+    sh:severity sh:Info ;
+    sh:property [
+        sh:path :isClientOf ;
+        sh:class :User ;
+        # No cardinality constraints as Organization can be client of multiple users or none
+    ] .
+
+#################################################################
+# Project Validation Rules
+#################################################################
+
+# Project Basic Properties
+shapes:ProjectBasicShape a sh:NodeShape ;
+    rdfs:label "Project Basic Properties Validation" ;
+    rdfs:comment """
+        Validates basic properties for Project entities. Each Project must have a name
+        and must belong to exactly one Organization. Projects don't require Contracts
+        initially as per the relaxed axiom, but will eventually need them for Reports.
+    """ ;
+    sh:targetClass :Project ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Project must have a name. Please add a :name property with a string value." ;
+    ] ;
+    sh:property [
+        sh:path :belongsTo ;
+        sh:class :Organization ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Project must belong to exactly one Organization. Please ensure the Project has a single :belongsTo property pointing to an Organization." ;
+    ] .
+
+# Project Name Uniqueness within an Organization
+shapes:ProjectNameShape a sh:NodeShape ;
+    rdfs:label "Project Name Uniqueness" ;
+    rdfs:comment """
+        Ensures Project names are unique within each Organization to prevent confusion
+        and maintain data integrity. Different Organizations can have Projects with the
+        same name, but a single Organization cannot have duplicate Project names.
+    """ ;
+    sh:targetClass :Project ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "Project name must be unique for a given Organization. Please rename this Project as another Project with the same name already exists for this Organization." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this ?name ?org
+            WHERE {
+                ?this :name ?name ;
+                      :belongsTo ?org .
+
+                ?otherProject :name ?name ;
+                              :belongsTo ?org .
+
+                FILTER(?this != ?otherProject)
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Task Validation Rules
+#################################################################
+
+# Task Required Properties
+shapes:TaskRequiredPropertiesShape a sh:NodeShape ;
+    rdfs:label "Task Required Properties" ;
+    rdfs:comment """
+        Validates required properties for Task entities. Each Task must have a name,
+        must be defined by exactly one User, and must be assigned to exactly one Project.
+        This ensures clear ownership and accountability for all work activities.
+    """ ;
+    sh:targetClass :Task ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Task must have a name. Please add a :name property with a string value." ;
+    ] ;
+    sh:property [
+        sh:path :isDefinedBy ;
+        sh:class :User ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Task must be defined by exactly one User. Please ensure the Task has a single :isDefinedBy property pointing to a User." ;
+    ] ;
+    sh:property [
+        sh:path :isAssignedTo ;
+        sh:class :Project ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Task must be assigned to exactly one Project. Please ensure the Task has a single :isAssignedTo property pointing to a Project." ;
+    ] .
+
+# Task-Project-User Consistency
+shapes:ProjectTaskUserConsistencyShape a sh:NodeShape ;
+    rdfs:label "Task-Project-User Consistency" ;
+    rdfs:comment """
+        Validates that Tasks are assigned to Projects where the Task creator has
+        appropriate permissions. A Task should normally be defined by a User who
+        is a client of the Project's Organization, but this is not strictly enforced.
+    """ ;
+    sh:targetClass :Task ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "Task is assigned to a project with a different owner than the task creator and the task creator is not a client of the project's organization. Consider reassigning the Task to a Project where you have client permissions, or have the Organization add you as a client." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this ?taskUser ?projectOrg ?projectUser
+            WHERE {
+                ?this :isDefinedBy ?taskUser ;
+                      :isAssignedTo ?project .
+
+                ?project :belongsTo ?projectOrg .
+                ?projectOrg :isClientOf ?projectUser .
+
+                # Check if the task creator is not the project owner/manager
+                FILTER(?taskUser != ?projectUser)
+
+                # Unless the task creator is also recognized as a client of the organization
+                FILTER NOT EXISTS { ?projectOrg :isClientOf ?taskUser }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Temporal Entity Rules
+#################################################################
+
+# Common Temporal Validation for all temporal entities
+shapes:TemporalEntityShape a sh:NodeShape ;
+    rdfs:label "Temporal Entity Validation" ;
+    rdfs:comment """
+        Validates temporal aspects for entities with start and end times (Contracts and Reports).
+        Ensures that all temporal entities have proper start and end timestamps, and that
+        the end time is always after the start time to maintain temporal consistency.
+    """ ;
+    sh:targetClass :TemporalEntity ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :startTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "TemporalEntity must have exactly one startTimestamp. Please add a :startTimestamp property with a valid dateTime value." ;
+    ] ;
+    sh:property [
+        sh:path :endTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "TemporalEntity must have exactly one endTimestamp. Please add an :endTimestamp property with a valid dateTime value." ;
+    ] ;
+    sh:sparql [
+        sh:message "End time must be after start time. Please adjust the timestamps so that endTimestamp occurs after startTimestamp." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this ?start ?end
+            WHERE {
+                ?this :startTimestamp ?start ;
+                      :endTimestamp ?end .
+                FILTER(?end <= ?start)
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Contract Validation Rules
+#################################################################
+
+# Contract Basic Properties
+shapes:ContractShape a sh:NodeShape ;
+    rdfs:label "Contract Properties Validation" ;
+    rdfs:comment """
+        Validates required properties for Contract entities. Each Contract must have a name,
+        must cover exactly one Project, and must be added by exactly one User. This ensures
+        proper tracking of contractual agreements and their relationship to Projects.
+    """ ;
+    sh:targetClass :Contract ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Contract must have a name. Please add a :name property with a string value." ;
+    ] ;
+    sh:property [
+        sh:path :covers ;
+        sh:class :Project ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Contract must cover exactly one Project. Please ensure the Contract has a single :covers property pointing to a Project." ;
+    ] ;
+    sh:property [
+        sh:path :isAddedBy ;
+        sh:class :User ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Contract must be added by exactly one User. Please ensure the Contract has a single :isAddedBy property pointing to a User." ;
+    ] .
+
+# Rate and RateUnit Consistency
+shapes:RateValidationShape a sh:NodeShape ;
+    rdfs:label "Contract Rate Validation" ;
+    rdfs:comment """
+        Ensures consistency between rate and rateUnit properties for Contracts.
+        If a rate is specified, a corresponding rate unit must also be provided,
+        and vice versa, to maintain complete billing information.
+    """ ;
+    sh:targetClass :Contract ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "Contract has rate specified but no rate unit, or rate unit but no rate. Please ensure both :rate and :rateUnit properties are provided together." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this ?rate ?unit
+            WHERE {
+                OPTIONAL { ?this :rate ?rate }
+                OPTIONAL { ?this :rateUnit ?unit }
+                FILTER((BOUND(?rate) && !BOUND(?unit)) || (!BOUND(?rate) && BOUND(?unit)))
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Report Validation Rules
+#################################################################
+
+# Report Required Properties
+shapes:ReportRequiredPropertiesShape a sh:NodeShape ;
+    rdfs:label "Report Required Properties" ;
+    rdfs:comment """
+        Validates required properties for Report entities. Each Report must be reported by
+        exactly one User, must be reported for at least one Task, must have a Location,
+        and must specify its billability status. This ensures complete time tracking records.
+    """ ;
+    sh:targetClass :Report ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :isReportedBy ;
+        sh:class :User ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Report must be reported by exactly one User. Please ensure the Report has a single :isReportedBy property pointing to a User." ;
+    ] ;
+    sh:property [
+        sh:path :isReportedFor ;
+        sh:class :Task ;
+        sh:minCount 1 ;
+        sh:message "Report must be reported for at least one Task. Please add at least one :isReportedFor property pointing to a Task." ;
+    ] ;
+    sh:property [
+        sh:path :isReportedAt ;
+        sh:class :Location ;
+        sh:minCount 1 ;
+        sh:message "Report must be reported at a Location. Please add an :isReportedAt property pointing to a Location." ;
+    ] ;
+    sh:property [
+        sh:path :billable ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:message "Report must specify billable status. Please add a :billable property with a boolean value (true or false)." ;
+    ] .
+
+# Critical Business Rule: Report can't be created for Tasks whose Project lacks a Contract
+shapes:ReportProjectContractShape a sh:NodeShape ;
+    rdfs:label "Report-Project-Contract Validation" ;
+    rdfs:comment """
+        Enforces the critical business rule that Reports cannot be created for Tasks
+        whose Projects lack Contracts. This rule maintains billing integrity by ensuring
+        that all reported time is associated with a contractual agreement. While Projects
+        can exist without Contracts initially, time cannot be reported against them
+        until a Contract is in place.
+    """ ;
+    sh:targetClass :Report ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        sh:message "Critical: Report cannot be created for a Task whose Project is not covered by any Contract. Please create a Contract for the Project before reporting time, or report time against a Task for a Project with an existing Contract." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this ?task ?project
+            WHERE {
+                ?this :isReportedFor ?task .
+                ?task :isAssignedTo ?project .
+
+                # Check if the project does not have any contract covering it
+                FILTER NOT EXISTS {
+                    ?contract a :Contract ;
+                             :covers ?project .
+                }
+            }
+        """ ;
+    ] .
+
+# Report-Contract Temporal Coherence - UPDATED to handle date-time boundary issues
+shapes:ReportContractTemporalShape a sh:NodeShape ;
+    sh:severity sh:Warning ;
+    rdfs:label "Report-Contract Temporal Coherence" ;
+    rdfs:comment """
+        Validates temporal coherence between Reports and Contracts. Ideally, Report
+        timestamps should fall within the Contract period. This is not strictly enforced
+        but is flagged as a warning to maintain consistency in time tracking.
+    """ ;
+    sh:targetClass :Report ;
+    sh:sparql [
+        sh:message "Warning: Report has timestamps outside the contract period. Consider adjusting the Report timestamps to fall within the Contract period, or extending the Contract to cover this time period." ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            SELECT ?this ?contract ?reportStart ?reportEnd ?contractStart ?contractEnd
+            WHERE {
+                ?this :isReportedFor ?task ;
+                      :startTimestamp ?reportStart ;
+                      :endTimestamp ?reportEnd .
+
+                ?task :isAssignedTo ?project .
+
+                ?contract :covers ?project ;
+                        :startTimestamp ?contractStart ;
+                        :endTimestamp ?contractEnd .
+
+                FILTER(?reportStart < ?contractStart || ?reportEnd > ?contractEnd)
+            }
+        """ ;
+    ] .
+
+# Billability Rule Validation
+shapes:BillabilityRuleShape a sh:NodeShape ;
+    sh:severity sh:Warning ;
+    rdfs:label "Report Billability Validation" ;
+    rdfs:comment """
+        Validates consistency between Report billability status and Contract dates.
+        Reports within Contract dates should typically be billable, while those outside
+        Contract dates should typically be non-billable. This is not strictly enforced
+        but is flagged as a warning to maintain billing consistency.
+    """ ;
+    sh:targetClass :Report ;
+    sh:sparql [
+        sh:message "Warning: Report's billability status may be inconsistent with contract dates. Reports within contract dates should typically be billable, while those outside contract dates should typically be non-billable. Consider adjusting the billability status to match the temporal relationship with the contract." ;
+        sh:severity sh:Warning ;
+        sh:select """
+            PREFIX : <http://www.semanticweb.org/timerep/ontology#>
+            SELECT ?this ?billable ?shouldBeBillable
+            WHERE {
+                ?this :billable ?billable ;
+                      :isReportedFor ?task ;
+                      :startTimestamp ?reportStart ;
+                      :endTimestamp ?reportEnd .
+
+                ?task :isAssignedTo ?project .
+
+                ?contract :covers ?project ;
+                         :startTimestamp ?contractStart ;
+                         :endTimestamp ?contractEnd .
+
+                # Report is billable if it falls within contract dates
+                BIND((?reportStart >= ?contractStart && ?reportEnd <= ?contractEnd) AS ?shouldBeBillable)
+
+                # Only flag when billability is inconsistent
+                FILTER(?billable != ?shouldBeBillable)
+            }
+        """ ;
+    ] .
+
+# Break Time Validation
+shapes:BreakTimeValidationShape a sh:NodeShape ;
+    rdfs:label "Break Time Format Validation" ;
+    rdfs:comment """
+        Validates the format of break time intervals in Reports. Break times must
+        follow the pattern '30 minutes' (a number followed by the word 'minutes')
+        to maintain consistent time tracking and calculation.
+    """ ;
+    sh:targetClass :Report ;
+    sh:severity sh:Warning ;
+    sh:property [
+        sh:path :breakTimeInterval ;
+        sh:datatype xsd:string ;
+        sh:pattern "^(\\d+ hours )?\\d+ minutes$" ;
+        sh:message "Break time format is invalid. Please use the format '15 minutes' or '2 hours 15 minutes'." ;
+    ] .
+
+#################################################################
+# Location Validation Rules
+#################################################################
+
+shapes:LocationNameShape a sh:NodeShape ;
+    rdfs:label "Location Name Validation" ;
+    rdfs:comment """
+        Validates the name property of Location entities. Each Location must have a name
+        that does not exceed 255 characters to maintain database compatibility and usability.
+    """ ;
+    sh:targetClass :Location ;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path :name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:maxLength 255 ;
+        sh:message "Location must have a name that doesn't exceed 255 characters. Please provide a name property with an appropriate length." ;
+    ] .
+
+#################################################################
+# Expense Validation Rules
+#################################################################
+
+shapes:ExpenseValidationShape a sh:NodeShape ;
+    rdfs:label "Expense Validation" ;
+    rdfs:comment """
+        Validates properties for Expense entities. Each Expense must have a positive
+        amount, a type from a predefined list of categories, and must be associated
+        with exactly one Report. This ensures proper tracking and categorization
+        of all expenses.
+    """ ;
+    sh:targetClass :Expense ;
+    sh:severity sh:Warning ;
+    sh:property [
+        sh:path :amount ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive 0 ;
+        sh:message "Expense amount must be a positive decimal value. Please provide a valid amount greater than or equal to zero." ;
+    ] ;
+    sh:property [
+        sh:path :type ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:in ("Travel" "Meals" "Technology" "Hardware" "Office" "Communication" "Professional" "Other") ;
+        sh:message "Expense type must be one of the predefined categories: Travel, Meals, Technology, Hardware, Office, Communication, Professional, or Other. Please select an appropriate type." ;
+    ] ;
+    sh:property [
+        sh:path :isIncurredFor ;
+        sh:class :Report ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Expense must be incurred for exactly one Report. Please ensure the Expense has a single :isIncurredFor property pointing to a Report." ;
+    ] .

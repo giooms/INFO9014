@@ -1,0 +1,146 @@
+# Query 1: Billable Time Per Organization with Hours Calculation (Alternative)
+PREFIX tr: <http://www.semanticweb.org/timerep/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?orgName ?projectName ?contractName
+       (COUNT(?report) AS ?reportCount)
+       (SUM(?hours) AS ?totalHours)
+FROM <http://www.semanticweb.org/timerep/graph>
+WHERE {
+  # Find organizations and their projects
+  ?org rdf:type tr:Organization ;
+       tr:name ?orgName .
+  ?project tr:belongsTo ?org ;
+           tr:name ?projectName .
+  
+  # Get contracts covering projects
+  ?contract tr:covers ?project ;
+            tr:name ?contractName .
+  
+  # Find billable reports
+  ?report tr:isTrackedBy ?contract ;
+          tr:billable true ;
+          tr:startTimestamp ?start ;
+          tr:endTimestamp ?end .
+  
+  # Calculate approximate hours by extracting and comparing date parts
+  BIND(xsd:dateTime(?start) as ?startDT)
+  BIND(xsd:dateTime(?end) as ?endDT)
+  BIND(day(?endDT) - day(?startDT) as ?dayDiff)
+  BIND(hours(?endDT) - hours(?startDT) as ?hourDiff)
+  
+  # Simple calculation: full days × 24 + hour difference
+  BIND((?dayDiff * 24) + ?hourDiff as ?hours)
+
+}
+GROUP BY ?orgName ?projectName ?contractName
+ORDER BY ?orgName ?projectName
+LIMIT 15
+
+# Query 2: Temporal Analysis with Filtering
+PREFIX tr: <http://www.semanticweb.org/timerep/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?month ?orgName (COUNT(?report) AS ?reportCount)
+FROM <http://www.semanticweb.org/timerep/graph>
+WHERE {
+  # Find reports for specific timeframe
+  ?report rdf:type tr:Report ;
+          tr:startTimestamp ?start ;
+          tr:isTrackedBy ?contract .
+  
+  # Extract month from timestamp for grouping
+  BIND(SUBSTR(STR(?start), 1, 7) AS ?month)
+  
+  # Find related contract, project, and organization
+  ?contract tr:covers ?project .
+  ?project tr:belongsTo ?org .
+  ?org rdf:type tr:Organization ;
+       tr:name ?orgName .
+  
+  # Filter for reports in 2024
+  FILTER(STRSTARTS(STR(?start), "2024"))
+}
+GROUP BY ?month ?orgName
+ORDER BY ?month ?orgName
+
+# Query 3: Finding Resources with Negation and Subqueries
+PREFIX tr: <http://www.semanticweb.org/timerep/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?userName ?contractName ?reportDate
+FROM <http://www.semanticweb.org/timerep/graph>
+WHERE {
+  # Get users with complete info
+  ?user rdf:type tr:User ;
+        tr:firstName ?first ;
+        tr:lastName ?last .
+  BIND(CONCAT(?first, " ", ?last) AS ?userName)
+  
+  # Find their reports
+  ?report tr:isReportedBy ?user ;
+          tr:startTimestamp ?start ;
+          tr:isTrackedBy ?contract .
+  
+  # Format date for display
+  BIND(SUBSTR(STR(?start), 1, 10) AS ?reportDate)
+  
+  # Get contract name
+  ?contract tr:name ?contractName .
+  
+  # Subquery: Find users with at least 5 reports
+  {
+    SELECT ?user (COUNT(?r) AS ?reportCount)
+    WHERE {
+      ?r tr:isReportedBy ?user .
+    }
+    GROUP BY ?user
+    HAVING (COUNT(?r) >= 5)
+  }
+  
+  # Negation: Exclude reports with expenses
+  FILTER NOT EXISTS {
+    ?expense tr:isIncurredFor ?report .
+  }
+}
+ORDER BY ?userName ?reportDate
+LIMIT 20
+
+# Query 4: User Activity Analysis (Revised)
+PREFIX tr: <http://www.semanticweb.org/timerep/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?userName ?taskCount ?reportCount
+FROM <http://www.semanticweb.org/timerep/graph>
+WHERE {
+  # Start with users that have first and last names
+  ?user rdf:type tr:User ;
+        tr:firstName ?firstName ;
+        tr:lastName ?lastName .
+  BIND(CONCAT(?firstName, " ", ?lastName) AS ?userName)
+  
+  # Count reports by this user
+  {
+    SELECT ?user (COUNT(?report) AS ?reportCount)
+    WHERE {
+      ?report tr:isReportedBy ?user .
+    }
+    GROUP BY ?user
+  }
+  
+  # Count tasks defined by this user
+  {
+    SELECT ?user (COUNT(?task) AS ?taskCount)
+    WHERE {
+      ?task tr:isDefinedBy ?user .
+    }
+    GROUP BY ?user
+  }
+  
+  # Only show users with some activity
+  FILTER(?reportCount > 0 || ?taskCount > 0)
+}
+ORDER BY DESC(?reportCount) ?userName
+LIMIT 15
